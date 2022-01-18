@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		04361F9827969FA90090F31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361F9727969FA90090F31A /* AppDelegate.swift */; };
-		04361F9A27969FA90090F31A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361F9927969FA90090F31A /* SceneDelegate.swift */; };
 		04361F9C27969FA90090F31A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361F9B27969FA90090F31A /* ViewController.swift */; };
 		04361F9F27969FA90090F31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04361F9D27969FA90090F31A /* Main.storyboard */; };
 		04361FA127969FAA0090F31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04361FA027969FAA0090F31A /* Assets.xcassets */; };
 		04361FA427969FAA0090F31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04361FA227969FAA0090F31A /* LaunchScreen.storyboard */; };
+		04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FAB2796A18C0090F31A /* TabBarVC.swift */; };
+		04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB02796A25D0090F31A /* TestHomeVC.swift */; };
+		04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB22796A2680090F31A /* ProjectHomeVC.swift */; };
+		04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB42796A2720090F31A /* DailyHomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04361F9427969FA90090F31A /* KZSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04361F9727969FA90090F31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04361F9927969FA90090F31A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04361F9B27969FA90090F31A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04361F9E27969FA90090F31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04361FA027969FAA0090F31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04361FA327969FAA0090F31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04361FA527969FAA0090F31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04361FAB2796A18C0090F31A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		04361FB02796A25D0090F31A /* TestHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVC.swift; sourceTree = "<group>"; };
+		04361FB22796A2680090F31A /* ProjectHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHomeVC.swift; sourceTree = "<group>"; };
+		04361FB42796A2720090F31A /* DailyHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				04361F9727969FA90090F31A /* AppDelegate.swift */,
-				04361F9927969FA90090F31A /* SceneDelegate.swift */,
 				04361F9B27969FA90090F31A /* ViewController.swift */,
+				04361FAB2796A18C0090F31A /* TabBarVC.swift */,
+				04361FAD2796A2050090F31A /* daily_module */,
+				04361FAE2796A23B0090F31A /* project_module */,
+				04361FAF2796A2440090F31A /* test_module */,
 				04361F9D27969FA90090F31A /* Main.storyboard */,
 				04361FA027969FAA0090F31A /* Assets.xcassets */,
 				04361FA227969FAA0090F31A /* LaunchScreen.storyboard */,
 				04361FA527969FAA0090F31A /* Info.plist */,
 			);
 			path = KZSwift;
+			sourceTree = "<group>";
+		};
+		04361FAD2796A2050090F31A /* daily_module */ = {
+			isa = PBXGroup;
+			children = (
+				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
+			);
+			path = daily_module;
+			sourceTree = "<group>";
+		};
+		04361FAE2796A23B0090F31A /* project_module */ = {
+			isa = PBXGroup;
+			children = (
+				04361FB22796A2680090F31A /* ProjectHomeVC.swift */,
+			);
+			path = project_module;
+			sourceTree = "<group>";
+		};
+		04361FAF2796A2440090F31A /* test_module */ = {
+			isa = PBXGroup;
+			children = (
+				04361FB02796A25D0090F31A /* TestHomeVC.swift */,
+			);
+			path = test_module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
 				04361F9C27969FA90090F31A /* ViewController.swift in Sources */,
+				04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */,
+				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,
-				04361F9A27969FA90090F31A /* SceneDelegate.swift in Sources */,
+				04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
