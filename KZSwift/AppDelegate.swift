@@ -20,4 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
+func KZLog<T>(message:T,file:String=#file,method:String=#function,line:Int=#line) {
+    //在build setting中搜索swift flag 设置debug模式
+    #if DEBUG
+    
+    let fileName = (file as NSString).lastPathComponent
+    
+    print("\(fileName)-\(line)line:\(message)")
+    
+    #endif
+}
