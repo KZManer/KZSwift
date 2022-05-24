@@ -7,10 +7,9 @@
 
 import UIKit
 
-class TestHomeVC: UIViewController {
+class TestHomeVC: RootHomeVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
     }
 }

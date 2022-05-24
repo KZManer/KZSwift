@@ -26,7 +26,7 @@ class TabBarVC: UITabBarController {
         for title in titles {
             let vc = vcs[i]
             
-            let nav = UINavigationController.init(rootViewController: vc)
+            let nav = RootNavigationController.init(rootViewController: vc)
             //默认展示图片
             nav.tabBarItem.image = UIImage.init(named: "tabbar_nor_" + picImageMiddleNames[i])?.withRenderingMode(.alwaysOriginal)
             //选中时的图片
