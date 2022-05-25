@@ -25,6 +25,9 @@
 		291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F132839028F00570E58 /* RootHomeVC.swift */; };
 		294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */; };
 		294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */; };
+		29D424DB283E23390032CF9A /* HintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D424DA283E23390032CF9A /* HintVC.swift */; };
+		29D424DD283E27690032CF9A /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D424DC283E27690032CF9A /* HintView.swift */; };
+		29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6C14A283DC30F00198372 /* ShapeVC.swift */; };
 		29EC6851283B4106004F2D39 /* KCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC6850283B4106004F2D39 /* KCellModel.swift */; };
 		29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC6853283B4684004F2D39 /* DNavigationBarVC.swift */; };
 		29EC6856283B638B004F2D39 /* DNavigationBarVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC6855283B638B004F2D39 /* DNavigationBarVC1.swift */; };
@@ -55,6 +58,9 @@
 		291F5F132839028F00570E58 /* RootHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeVC.swift; sourceTree = "<group>"; };
 		294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingVC.swift; sourceTree = "<group>"; };
 		294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingExtension.swift; sourceTree = "<group>"; };
+		29D424DA283E23390032CF9A /* HintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintVC.swift; sourceTree = "<group>"; };
+		29D424DC283E27690032CF9A /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HintView.swift; path = ../../../../../../Documents/HintView.swift; sourceTree = "<group>"; };
+		29E6C14A283DC30F00198372 /* ShapeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeVC.swift; sourceTree = "<group>"; };
 		29EC6850283B4106004F2D39 /* KCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCellModel.swift; sourceTree = "<group>"; };
 		29EC6853283B4684004F2D39 /* DNavigationBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNavigationBarVC.swift; sourceTree = "<group>"; };
 		29EC6855283B638B004F2D39 /* DNavigationBarVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNavigationBarVC1.swift; sourceTree = "<group>"; };
@@ -114,8 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
+				29E6C149283DC2D000198372 /* 不规则图形 */,
 				29037D55283CDCA8001FB744 /* 黑魔法方法交换 */,
 				29037D4D283CBB45001FB744 /* WKWebView */,
+				29D424D9283E23170032CF9A /* 空白页面占位 */,
 				29037D46283C68E1001FB744 /* 加载动画 */,
 				29EC6852283B4669004F2D39 /* 导航栏 */,
 			);
@@ -195,6 +203,23 @@
 				04361FAF2796A2440090F31A /* test_module */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		29D424D9283E23170032CF9A /* 空白页面占位 */ = {
+			isa = PBXGroup;
+			children = (
+				29D424DC283E27690032CF9A /* HintView.swift */,
+				29D424DA283E23390032CF9A /* HintVC.swift */,
+			);
+			path = "空白页面占位";
+			sourceTree = "<group>";
+		};
+		29E6C149283DC2D000198372 /* 不规则图形 */ = {
+			isa = PBXGroup;
+			children = (
+				29E6C14A283DC30F00198372 /* ShapeVC.swift */,
+			);
+			path = "不规则图形";
 			sourceTree = "<group>";
 		};
 		29EC6852283B4669004F2D39 /* 导航栏 */ = {
@@ -343,6 +368,7 @@
 				29EC6851283B4106004F2D39 /* KCellModel.swift in Sources */,
 				29EC6856283B638B004F2D39 /* DNavigationBarVC1.swift in Sources */,
 				29037D4F283CBB6F001FB744 /* WebViewVC.swift in Sources */,
+				29D424DB283E23390032CF9A /* HintVC.swift in Sources */,
 				29037D48283C68F8001FB744 /* JJShimmerView.swift in Sources */,
 				291F5F0F2838FF9D00570E58 /* KUIKit.swift in Sources */,
 				291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */,
@@ -353,7 +379,9 @@
 				29037D4A283C6927001FB744 /* ShimmerVC.swift in Sources */,
 				29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */,
 				29EC685E283B6DE9004F2D39 /* RootNavigationController.swift in Sources */,
+				29D424DD283E27690032CF9A /* HintView.swift in Sources */,
 				04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */,
+				29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */,
 				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
 				291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,

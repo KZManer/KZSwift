@@ -21,8 +21,10 @@ class KCellModel: NSObject {
         return [
             .init(title: "导航栏", id: "navigationBar"),
             .init(title: "加载动画", id: "loadingAnimation"),
+            .init(title: "空白页面占位", id: "placeholder"),
             .init(title: "WKWebView", id: "wkwebview"),
             .init(title: "黑魔法之方法交换", id:"methodSwizzling"),
+            .init(title: "不规则图形", id: "shape"),
         ]
     }
 }

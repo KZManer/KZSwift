@@ -73,6 +73,10 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = WebViewVC()
         case "methodSwizzling":
             showVC = MethodSwizzlingVC()
+        case "shape":
+            showVC = ShapeVC()
+        case "placeholder":
+            showVC = HintVC()
         case .none:
             break
         case .some(_):
@@ -80,6 +84,7 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
         }
         if let vc = showVC {
             vc.hidesBottomBarWhenPushed = true
+            vc.title = cellInfo.kTitle
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
