@@ -77,6 +77,8 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = ShapeVC()
         case "placeholder":
             showVC = HintVC()
+        case "DZNEmptyDataSet":
+            showVC = DZNEmptyDataVC()
         case .none:
             break
         case .some(_):

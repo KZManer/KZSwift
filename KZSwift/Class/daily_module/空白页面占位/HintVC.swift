@@ -9,8 +9,8 @@ import UIKit
 import EmptyStateKit
 
 class HintVC: RootHomeVC {
-    lazy var hintView: HintView = {
-        let hintView = HintView(frame: hintViewFrame)
+    lazy var hintView: JJHintView = {
+        let hintView = JJHintView(frame: hintViewFrame)
         hintView.delegate = self
         return hintView
     }()
@@ -43,8 +43,8 @@ class HintVC: RootHomeVC {
         self.hintView.show(in: self.view, scene: .loadFailure)
     }
 }
-extension HintVC: HintViewDelegate {
-    func dg_hintViewHintButtonPressed(hintView: HintView) {
+extension HintVC: JJHintViewDelegate {
+    func dg_hintViewButtonPressed(hintView: JJHintView) {
         hintView.hide()
     }
 }
