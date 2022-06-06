@@ -30,7 +30,6 @@ class DNavigationBarVC: RootHomeVC {
         super.viewDidLoad()
         self.title = "导航栏"
         self.view.addSubview(self.tableView)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

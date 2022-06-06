@@ -23,6 +23,9 @@
 		291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F0C2838FF7A00570E58 /* KTools.swift */; };
 		291F5F0F2838FF9D00570E58 /* KUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F0E2838FF9D00570E58 /* KUIKit.swift */; };
 		291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F132839028F00570E58 /* RootHomeVC.swift */; };
+		294E1AE7284DB79D0038EBD3 /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AE6284DB79D0038EBD3 /* DateVC.swift */; };
+		294E1AEA284DD3E60038EBD3 /* KConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AE9284DD3E60038EBD3 /* KConstant.swift */; };
+		294E1AED284DFC220038EBD3 /* KeychainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AEC284DFC220038EBD3 /* KeychainVC.swift */; };
 		294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */; };
 		294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */; };
 		29502675283F202E00AD70C9 /* DZNEmptyDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */; };
@@ -57,6 +60,9 @@
 		291F5F0C2838FF7A00570E58 /* KTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTools.swift; sourceTree = "<group>"; };
 		291F5F0E2838FF9D00570E58 /* KUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIKit.swift; sourceTree = "<group>"; };
 		291F5F132839028F00570E58 /* RootHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeVC.swift; sourceTree = "<group>"; };
+		294E1AE6284DB79D0038EBD3 /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
+		294E1AE9284DD3E60038EBD3 /* KConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KConstant.swift; sourceTree = "<group>"; };
+		294E1AEC284DFC220038EBD3 /* KeychainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainVC.swift; sourceTree = "<group>"; };
 		294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingVC.swift; sourceTree = "<group>"; };
 		294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingExtension.swift; sourceTree = "<group>"; };
 		29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataVC.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				291F5F122839027300570E58 /* Root */,
+				294E1AE8284DD3CB0038EBD3 /* Public */,
 				291F5F0B2838FF6C00570E58 /* Tools */,
 				291F5F152839109800570E58 /* Class */,
 				04361F9D27969FA90090F31A /* Main.storyboard */,
@@ -122,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
+				294E1AEB284DFBF20038EBD3 /* 3rd-KeychainAccess */,
+				294E1AE5284DB7830038EBD3 /* 日期 */,
 				29502673283F1FFC00AD70C9 /* 3rd-DZNEmptyDataSet */,
 				29E6C149283DC2D000198372 /* 不规则图形 */,
 				29037D55283CDCA8001FB744 /* 黑魔法方法交换 */,
@@ -206,6 +215,30 @@
 				04361FAF2796A2440090F31A /* test_module */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		294E1AE5284DB7830038EBD3 /* 日期 */ = {
+			isa = PBXGroup;
+			children = (
+				294E1AE6284DB79D0038EBD3 /* DateVC.swift */,
+			);
+			path = "日期";
+			sourceTree = "<group>";
+		};
+		294E1AE8284DD3CB0038EBD3 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				294E1AE9284DD3E60038EBD3 /* KConstant.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		294E1AEB284DFBF20038EBD3 /* 3rd-KeychainAccess */ = {
+			isa = PBXGroup;
+			children = (
+				294E1AEC284DFC220038EBD3 /* KeychainVC.swift */,
+			);
+			path = "3rd-KeychainAccess";
 			sourceTree = "<group>";
 		};
 		29502673283F1FFC00AD70C9 /* 3rd-DZNEmptyDataSet */ = {
@@ -377,17 +410,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				29EC6851283B4106004F2D39 /* KCellModel.swift in Sources */,
+				294E1AEA284DD3E60038EBD3 /* KConstant.swift in Sources */,
 				29EC6856283B638B004F2D39 /* DNavigationBarVC1.swift in Sources */,
 				29037D4F283CBB6F001FB744 /* WebViewVC.swift in Sources */,
 				29D424DB283E23390032CF9A /* HintVC.swift in Sources */,
 				29037D48283C68F8001FB744 /* JJShimmerView.swift in Sources */,
 				291F5F0F2838FF9D00570E58 /* KUIKit.swift in Sources */,
 				291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */,
+				294E1AED284DFC220038EBD3 /* KeychainVC.swift in Sources */,
 				29EC6858283B6694004F2D39 /* DNavigationBarVC2.swift in Sources */,
 				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
 				29037D51283CBC0D001FB744 /* ShimmerProtocol.swift in Sources */,
 				04361F9C27969FA90090F31A /* ViewController.swift in Sources */,
 				29037D4A283C6927001FB744 /* ShimmerVC.swift in Sources */,
+				294E1AE7284DB79D0038EBD3 /* DateVC.swift in Sources */,
 				29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */,
 				29EC685E283B6DE9004F2D39 /* RootNavigationController.swift in Sources */,
 				29D424DD283E27690032CF9A /* JJHintView.swift in Sources */,
@@ -553,6 +589,7 @@
 				DEVELOPMENT_TEAM = 9V4WY345DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KZSwift/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "该标识符将用于向您投放个性化广告";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -583,6 +620,7 @@
 				DEVELOPMENT_TEAM = 9V4WY345DD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KZSwift/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "该标识符将用于向您投放个性化广告";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

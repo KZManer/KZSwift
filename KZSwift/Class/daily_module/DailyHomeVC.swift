@@ -30,6 +30,7 @@ class DailyHomeVC: RootHomeVC {
         super.viewDidLoad()
         doNavUI()
         self.view.addSubview(self.tableView)
+        KLog(message: "34:D7:12:9B:3A:89".md5)
     }
     
     //MARK: Custom Method
@@ -39,7 +40,29 @@ class DailyHomeVC: RootHomeVC {
     }
 
 }
+import CommonCrypto
+public extension String {
+    /* ################################################################## */
+    /**
+     - returns: the String, as an MD5 hash.
+     */
+    var md5: String {
+        let str = self.cString(using: String.Encoding.utf8)
+        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
+        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
+        CC_MD5(str!, strLen, result)
 
+        let hash = NSMutableString()
+
+        for i in 0..<digestLen {
+            hash.appendFormat("%02x", result[i])
+        }
+
+        result.deallocate()
+        return hash as String
+    }
+}
 extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,6 +102,10 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = HintVC()
         case "DZNEmptyDataSet":
             showVC = DZNEmptyDataVC()
+        case "date":
+            showVC = DateVC()
+        case "KeychainAccess":
+            showVC = KeychainVC()
         case .none:
             break
         case .some(_):

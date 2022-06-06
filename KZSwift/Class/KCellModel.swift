@@ -25,7 +25,9 @@ class KCellModel: NSObject {
             .init(title: "WKWebView", id: "wkwebview"),
             .init(title: "黑魔法之方法交换", id:"methodSwizzling"),
             .init(title: "不规则图形", id: "shape"),
-            .init(title: "3rd-DZNEmptyDataSet", id: "DZNEmptyDataSet")
+            .init(title: "日期判断", id: "date"),
+            .init(title: "3rd-DZNEmptyDataSet", id: "DZNEmptyDataSet"),
+            .init(title: "3rd-KeychainAccess", id: "KeychainAccess"),
         ]
     }
 }

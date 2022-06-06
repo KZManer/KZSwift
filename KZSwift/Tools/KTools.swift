@@ -153,6 +153,11 @@ extension Date {
         return millisecond
     }
 }
+extension KTools {
+    public static func date_current() {
+//        var date = 
+    }
+}
 //MARK: UserDefaults
 extension UserDefaults {
     
