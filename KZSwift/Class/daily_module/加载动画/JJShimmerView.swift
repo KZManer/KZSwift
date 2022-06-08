@@ -54,7 +54,7 @@ class ShimmerVisibleView: UIView {
 
     lazy var bgImageView: UIImageView = {
         let imageV = UIImageView()
-        imageV.image = UIImage(named: "nav_logo")
+        imageV.image = UIImage(named: "basketball")
         imageV.frame = bounds
         return imageV
     }()

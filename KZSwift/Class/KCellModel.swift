@@ -30,4 +30,10 @@ class KCellModel: NSObject {
             .init(title: "3rd-KeychainAccess", id: "KeychainAccess"),
         ]
     }
+    
+    static func projectInfos() -> Array<KCellModel> {
+        return [
+            .init(title: "激活逻辑", id: "active"),
+        ]
+    }
 }

@@ -10,5 +10,5 @@ import SwiftyUserDefaults
 
 extension DefaultsKeys {
     ///记录日期
-    var activateDate: DefaultsKey<String?> {.init("activateDate")}
+//    var activateDate: DefaultsKey<String?> {.init("activateDate")}
 }

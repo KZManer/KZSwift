@@ -23,12 +23,15 @@
 		291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F0C2838FF7A00570E58 /* KTools.swift */; };
 		291F5F0F2838FF9D00570E58 /* KUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F0E2838FF9D00570E58 /* KUIKit.swift */; };
 		291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F5F132839028F00570E58 /* RootHomeVC.swift */; };
-		294E1AE7284DB79D0038EBD3 /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AE6284DB79D0038EBD3 /* DateVC.swift */; };
+		294E1AE7284DB79D0038EBD3 /* ActiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AE6284DB79D0038EBD3 /* ActiveVC.swift */; };
 		294E1AEA284DD3E60038EBD3 /* KConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AE9284DD3E60038EBD3 /* KConstant.swift */; };
 		294E1AED284DFC220038EBD3 /* KeychainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E1AEC284DFC220038EBD3 /* KeychainVC.swift */; };
 		294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */; };
 		294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */; };
 		29502675283F202E00AD70C9 /* DZNEmptyDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */; };
+		299355A5284EF82900303938 /* OceanEngineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355A4284EF82900303938 /* OceanEngineHandler.swift */; };
+		299355A7284F27F000303938 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355A6284F27F000303938 /* DeviceManager.swift */; };
+		299355AB284F576800303938 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355AA284F576800303938 /* String+Ex.swift */; };
 		29D424DB283E23390032CF9A /* HintVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D424DA283E23390032CF9A /* HintVC.swift */; };
 		29D424DD283E27690032CF9A /* JJHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D424DC283E27690032CF9A /* JJHintView.swift */; };
 		29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E6C14A283DC30F00198372 /* ShapeVC.swift */; };
@@ -60,12 +63,15 @@
 		291F5F0C2838FF7A00570E58 /* KTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTools.swift; sourceTree = "<group>"; };
 		291F5F0E2838FF9D00570E58 /* KUIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIKit.swift; sourceTree = "<group>"; };
 		291F5F132839028F00570E58 /* RootHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeVC.swift; sourceTree = "<group>"; };
-		294E1AE6284DB79D0038EBD3 /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
+		294E1AE6284DB79D0038EBD3 /* ActiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveVC.swift; sourceTree = "<group>"; };
 		294E1AE9284DD3E60038EBD3 /* KConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KConstant.swift; sourceTree = "<group>"; };
 		294E1AEC284DFC220038EBD3 /* KeychainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainVC.swift; sourceTree = "<group>"; };
 		294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingVC.swift; sourceTree = "<group>"; };
 		294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingExtension.swift; sourceTree = "<group>"; };
 		29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataVC.swift; sourceTree = "<group>"; };
+		299355A4284EF82900303938 /* OceanEngineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanEngineHandler.swift; sourceTree = "<group>"; };
+		299355A6284F27F000303938 /* DeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		299355AA284F576800303938 /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		29D424DA283E23390032CF9A /* HintVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintVC.swift; sourceTree = "<group>"; };
 		29D424DC283E27690032CF9A /* JJHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JJHintView.swift; path = ../../../../../../Documents/JJHintView.swift; sourceTree = "<group>"; };
 		29E6C14A283DC30F00198372 /* ShapeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeVC.swift; sourceTree = "<group>"; };
@@ -130,7 +136,6 @@
 			children = (
 				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
 				294E1AEB284DFBF20038EBD3 /* 3rd-KeychainAccess */,
-				294E1AE5284DB7830038EBD3 /* 日期 */,
 				29502673283F1FFC00AD70C9 /* 3rd-DZNEmptyDataSet */,
 				29E6C149283DC2D000198372 /* 不规则图形 */,
 				29037D55283CDCA8001FB744 /* 黑魔法方法交换 */,
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				04361FB22796A2680090F31A /* ProjectHomeVC.swift */,
+				294E1AE5284DB7830038EBD3 /* 激活 */,
 			);
 			path = project_module;
 			sourceTree = "<group>";
@@ -189,7 +195,9 @@
 			children = (
 				291F5F0C2838FF7A00570E58 /* KTools.swift */,
 				291F5F0E2838FF9D00570E58 /* KUIKit.swift */,
+				299355A6284F27F000303938 /* DeviceManager.swift */,
 				29037D50283CBC0D001FB744 /* ShimmerProtocol.swift */,
+				299355AA284F576800303938 /* String+Ex.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -217,12 +225,13 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		294E1AE5284DB7830038EBD3 /* 日期 */ = {
+		294E1AE5284DB7830038EBD3 /* 激活 */ = {
 			isa = PBXGroup;
 			children = (
-				294E1AE6284DB79D0038EBD3 /* DateVC.swift */,
+				299355A4284EF82900303938 /* OceanEngineHandler.swift */,
+				294E1AE6284DB79D0038EBD3 /* ActiveVC.swift */,
 			);
-			path = "日期";
+			path = "激活";
 			sourceTree = "<group>";
 		};
 		294E1AE8284DD3CB0038EBD3 /* Public */ = {
@@ -422,18 +431,21 @@
 				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
 				29037D51283CBC0D001FB744 /* ShimmerProtocol.swift in Sources */,
 				04361F9C27969FA90090F31A /* ViewController.swift in Sources */,
+				299355A7284F27F000303938 /* DeviceManager.swift in Sources */,
 				29037D4A283C6927001FB744 /* ShimmerVC.swift in Sources */,
-				294E1AE7284DB79D0038EBD3 /* DateVC.swift in Sources */,
+				294E1AE7284DB79D0038EBD3 /* ActiveVC.swift in Sources */,
 				29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */,
 				29EC685E283B6DE9004F2D39 /* RootNavigationController.swift in Sources */,
 				29D424DD283E27690032CF9A /* JJHintView.swift in Sources */,
 				04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */,
 				29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */,
+				299355AB284F576800303938 /* String+Ex.swift in Sources */,
 				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
 				291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,
 				294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */,
 				04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */,
+				299355A5284EF82900303938 /* OceanEngineHandler.swift in Sources */,
 				29502675283F202E00AD70C9 /* DZNEmptyDataVC.swift in Sources */,
 				29EC685A283B6A7B004F2D39 /* DNavigationBarVC3.swift in Sources */,
 				294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */,
@@ -600,7 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostshadow.KZSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -631,7 +643,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ghostshadow.KZSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -13,9 +13,7 @@ class DailyHomeVC: RootHomeVC {
     
     let kCellId = "DailyCellIdentifier"
     var infos: Array<KCellModel> {
-        get {
-            return KCellModel.dailyInfos()
-        }
+        return KCellModel.dailyInfos()
     }
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .plain)
@@ -35,7 +33,9 @@ class DailyHomeVC: RootHomeVC {
     
     //MARK: Custom Method
     func doNavUI() {
-        let titleIV = UIImageView(image: UIImage(named: "nav_logo"))
+        let titleIV = UIImageView(image: UIImage(named: "basketball"))
+        titleIV.layer.cornerRadius = 10
+        titleIV.clipsToBounds = true
         self.navigationItem.titleView = titleIV
     }
 
@@ -102,8 +102,6 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = HintVC()
         case "DZNEmptyDataSet":
             showVC = DZNEmptyDataVC()
-        case "date":
-            showVC = DateVC()
         case "KeychainAccess":
             showVC = KeychainVC()
         case .none:
