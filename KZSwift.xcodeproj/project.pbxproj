@@ -29,6 +29,9 @@
 		294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */; };
 		294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */; };
 		29502675283F202E00AD70C9 /* DZNEmptyDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */; };
+		2971E31E2855F0D4004DBAC0 /* AFNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E31D2855F0D4004DBAC0 /* AFNetWork.swift */; };
+		2971E3212855F195004DBAC0 /* AlamofireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E3202855F195004DBAC0 /* AlamofireVC.swift */; };
+		2971E3232855F23F004DBAC0 /* TemplateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971E3222855F23F004DBAC0 /* TemplateVC.swift */; };
 		299355A5284EF82900303938 /* OceanEngineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355A4284EF82900303938 /* OceanEngineHandler.swift */; };
 		299355A7284F27F000303938 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355A6284F27F000303938 /* DeviceManager.swift */; };
 		299355AB284F576800303938 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299355AA284F576800303938 /* String+Ex.swift */; };
@@ -69,6 +72,9 @@
 		294F9E15283CDE4100D15B21 /* MethodSwizzlingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingVC.swift; sourceTree = "<group>"; };
 		294F9E17283CE94400D15B21 /* MethodSwizzlingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodSwizzlingExtension.swift; sourceTree = "<group>"; };
 		29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataVC.swift; sourceTree = "<group>"; };
+		2971E31D2855F0D4004DBAC0 /* AFNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNetWork.swift; sourceTree = "<group>"; };
+		2971E3202855F195004DBAC0 /* AlamofireVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireVC.swift; sourceTree = "<group>"; };
+		2971E3222855F23F004DBAC0 /* TemplateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateVC.swift; sourceTree = "<group>"; };
 		299355A4284EF82900303938 /* OceanEngineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanEngineHandler.swift; sourceTree = "<group>"; };
 		299355A6284F27F000303938 /* DeviceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		299355AA284F576800303938 /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
+				2971E31F2855F178004DBAC0 /* 3rd-Alamofire */,
 				294E1AEB284DFBF20038EBD3 /* 3rd-KeychainAccess */,
 				29502673283F1FFC00AD70C9 /* 3rd-DZNEmptyDataSet */,
 				29E6C149283DC2D000198372 /* 不规则图形 */,
@@ -193,6 +200,7 @@
 		291F5F0B2838FF6C00570E58 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2971E31D2855F0D4004DBAC0 /* AFNetWork.swift */,
 				291F5F0C2838FF7A00570E58 /* KTools.swift */,
 				291F5F0E2838FF9D00570E58 /* KUIKit.swift */,
 				299355A6284F27F000303938 /* DeviceManager.swift */,
@@ -217,6 +225,7 @@
 		291F5F152839109800570E58 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				2971E3222855F23F004DBAC0 /* TemplateVC.swift */,
 				29EC6850283B4106004F2D39 /* KCellModel.swift */,
 				04361FAD2796A2050090F31A /* daily_module */,
 				04361FAE2796A23B0090F31A /* project_module */,
@@ -256,6 +265,14 @@
 				29502674283F202E00AD70C9 /* DZNEmptyDataVC.swift */,
 			);
 			path = "3rd-DZNEmptyDataSet";
+			sourceTree = "<group>";
+		};
+		2971E31F2855F178004DBAC0 /* 3rd-Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				2971E3202855F195004DBAC0 /* AlamofireVC.swift */,
+			);
+			path = "3rd-Alamofire";
 			sourceTree = "<group>";
 		};
 		29D424D9283E23170032CF9A /* 空白页面占位 */ = {
@@ -427,6 +444,7 @@
 				291F5F0F2838FF9D00570E58 /* KUIKit.swift in Sources */,
 				291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */,
 				294E1AED284DFC220038EBD3 /* KeychainVC.swift in Sources */,
+				2971E3212855F195004DBAC0 /* AlamofireVC.swift in Sources */,
 				29EC6858283B6694004F2D39 /* DNavigationBarVC2.swift in Sources */,
 				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
 				29037D51283CBC0D001FB744 /* ShimmerProtocol.swift in Sources */,
@@ -439,12 +457,14 @@
 				29D424DD283E27690032CF9A /* JJHintView.swift in Sources */,
 				04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */,
 				29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */,
+				2971E3232855F23F004DBAC0 /* TemplateVC.swift in Sources */,
 				299355AB284F576800303938 /* String+Ex.swift in Sources */,
 				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
 				291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,
 				294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */,
 				04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */,
+				2971E31E2855F0D4004DBAC0 /* AFNetWork.swift in Sources */,
 				299355A5284EF82900303938 /* OceanEngineHandler.swift in Sources */,
 				29502675283F202E00AD70C9 /* DZNEmptyDataVC.swift in Sources */,
 				29EC685A283B6A7B004F2D39 /* DNavigationBarVC3.swift in Sources */,

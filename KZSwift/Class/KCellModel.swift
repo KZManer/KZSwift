@@ -19,6 +19,7 @@ class KCellModel: NSObject {
     
     static func dailyInfos() -> Array<KCellModel> {
         return [
+            .init(title: "按钮代码模版", id: "template"),
             .init(title: "导航栏", id: "navigationBar"),
             .init(title: "加载动画", id: "loadingAnimation"),
             .init(title: "空白页面占位", id: "placeholder"),
@@ -28,6 +29,7 @@ class KCellModel: NSObject {
             .init(title: "日期判断", id: "date"),
             .init(title: "3rd-DZNEmptyDataSet", id: "DZNEmptyDataSet"),
             .init(title: "3rd-KeychainAccess", id: "KeychainAccess"),
+            .init(title: "3rd-Alamofire", id: "alamofire"),
         ]
     }
     

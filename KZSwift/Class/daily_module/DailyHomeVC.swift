@@ -88,6 +88,8 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
         let cellInfo = self.infos[indexPath.row]
         var showVC: UIViewController?
         switch cellInfo.kId {
+        case "template":
+            showVC = TemplateVC()
         case "navigationBar":
             showVC = DNavigationBarVC()
         case "loadingAnimation":
@@ -104,6 +106,8 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = DZNEmptyDataVC()
         case "KeychainAccess":
             showVC = KeychainVC()
+        case "alamofire":
+            showVC = AlamofireVC()
         case .none:
             break
         case .some(_):
