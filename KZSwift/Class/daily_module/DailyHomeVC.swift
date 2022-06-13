@@ -108,6 +108,8 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
             showVC = KeychainVC()
         case "alamofire":
             showVC = AlamofireVC()
+        case "swiftyJSON":
+            showVC = SwiftyJSONVC()
         case .none:
             break
         case .some(_):

@@ -51,7 +51,7 @@ class AFNetWork{
     
     private static let network = NetworkReachabilityManager()
     
-    static func request(urlString:String,method: HTTPMethod = .get,parameters:[String:Any],
+    static func requestJSON(urlString:String,method: HTTPMethod = .get,parameters:[String:Any],
                         resultData: @escaping (_ type: HttpResultType,_ result: Any) -> Void) {
         if network?.isReachable == false {
             resultData(.nonetwork, "no network")
@@ -85,11 +85,7 @@ class AFNetWork{
         paraString.removeLast()
         KLog(message: "\n完整地址：" + urlString + "?" + paraString + "\n")
         
-        AF.request(urlString,
-                   method: method,
-                   parameters: basicParams,
-                   encoding: encoding,
-                   headers: headers).responseJSON{ response in
+        AF.request(urlString, method: method, parameters: basicParams, encoding: encoding, headers: headers).responseJSON { response in
             switch response.result {
             case let .success(data):
                 resultData(.success,data)
@@ -99,9 +95,51 @@ class AFNetWork{
                 resultData(.failed,error)
                 break
             }
-            
+        }
+    }
+    static func requestData(urlString:String,method: HTTPMethod = .get,parameters:[String:Any],
+                        resultData: @escaping (_ type: HttpResultType,_ result: Any) -> Void) {
+        if network?.isReachable == false {
+            resultData(.nonetwork, "no network")
+            return
         }
         
+        var encoding:ParameterEncoding = URLEncoding.default  // get
+        if method == .post {
+            encoding = JSONEncoding.default
+        }
+        var basicParams = basicParameters()
+        basicParams.merge(parameters) { newParams, parameters in
+            newParams
+        }
+        
+        var paraString = ""
+        for (key,value) in basicParams {
+            var tvalue = ""
+            
+            if let cvalue = value as? CLongLong {
+                tvalue = String(cvalue)
+            }
+            if let ivalue = value as? Int {
+                tvalue = String(ivalue)
+            }
+            if let svalue = value as? String {
+                tvalue = svalue
+            }
+            paraString = paraString + key + "=" + tvalue + "&"
+        }
+        paraString.removeLast()
+        KLog(message: "\n完整地址：" + urlString + "?" + paraString + "\n")
+        
+        AF.request(urlString, method: method, parameters: basicParams, encoding: encoding, headers: headers).responseData { result in
+            KLog(message: result)
+            switch result.result {
+            case let .success(data):
+                resultData(.success,data)
+            case let .failure(error):
+                resultData(.failed,error)
+            }
+        }
     }
 }
 

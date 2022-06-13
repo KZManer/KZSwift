@@ -57,6 +57,21 @@ extension UIColor {
         let b = arc4random_uniform(256)
         return UIColor.rgb(r: CGFloat(r), g: CGFloat(g), b: CGFloat(b), alpha: alpha)
     }
+    ///返回随机色元组（前景色+背景色）
+    public static func randomTupleColor(alpha: CGFloat = 1.0) -> (bgColor: UIColor,fgColor: UIColor) {
+        let r = Double(arc4random_uniform(256))
+        let g = Double(arc4random_uniform(256))
+        let b = Double(arc4random_uniform(256))
+        //背景色
+        let bg = UIColor.rgb(r: CGFloat(r), g: CGFloat(g), b: CGFloat(b), alpha: alpha)
+        //前景色
+        var fg = UIColor.white
+        if(r * 0.299 + g * 0.578 + b * 0.114 >= 192){
+            //浅⾊
+            fg = .black
+        } else { /*深⾊*/ }
+        return (bg,fg)
+    }
 }
 public extension UIImage {
     

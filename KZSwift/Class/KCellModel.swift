@@ -30,12 +30,19 @@ class KCellModel: NSObject {
             .init(title: "3rd-DZNEmptyDataSet", id: "DZNEmptyDataSet"),
             .init(title: "3rd-KeychainAccess", id: "KeychainAccess"),
             .init(title: "3rd-Alamofire", id: "alamofire"),
+            .init(title: "3rd-SwiftyJSON", id: "swiftyJSON"),
         ]
     }
     
     static func projectInfos() -> Array<KCellModel> {
         return [
             .init(title: "激活逻辑", id: "active"),
+        ]
+    }
+    
+    static func testInfos() -> Array<KCellModel> {
+        return [
+            .init(title: "手机方向", id: "direction"),
         ]
     }
 }

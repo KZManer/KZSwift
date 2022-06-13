@@ -8,11 +8,14 @@
 import UIKit
 import AdSupport
 import AppTrackingTransparency
+import Alamofire
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var networkManager = NetworkReachabilityManager()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
 #if DEBUG
@@ -23,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbarVC = TabBarVC.init()
         window?.rootViewController = tabbarVC
         window?.makeKeyAndVisible()
+        
+        self.monitorNetworkStatus()
+        
         return true
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -48,6 +54,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 KLog(message:"广告标识：用户未打开IDFA开关")
             }
         }
+    }
+    
+    ///网络状态监听
+    private func monitorNetworkStatus() {
+        self.networkManager?.startListening(onQueue: DispatchQueue.main, onUpdatePerforming: { status in
+            switch status {
+            case .notReachable://没有网络链接
+//                self.hasNetwork = false
+//                self.networkStatus = .noNetwork
+                KLog(message: "没有网络链接")
+            case .unknown://网络状态未知
+//                self.hasNetwork = true
+//                self.networkStatus = .unknown
+                KLog(message: "网络状态未知")
+            case .reachable(.ethernetOrWiFi)://以太网或者wifi
+//                self.hasNetwork = true
+//                self.networkStatus = .wifi
+                KLog(message: "以太网或者wifi")
+            case .reachable(.cellular)://蜂窝数据
+//                self.hasNetwork = true
+//                self.networkStatus = .cellular
+                KLog(message: "蜂窝数据")
+            }
+        })
     }
     
     func injection() {
