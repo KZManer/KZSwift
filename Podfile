@@ -23,7 +23,7 @@ pod 'SnapKit', '~>5.0'          #自动布局框架
  pod 'SwiftyJSON', '~> 4.0'      #数据解析框架
  pod 'SwiftyUserDefaults', '~> 5.0' #UserDefault封装
 # pod 'Toast-Swift', '~> 5.0.1'   #提示框架
-pod 'RangersAppLog', '~> 3.2.9'
+#pod 'RangersAppLog', '~> 3.2.9'
 
 
 end

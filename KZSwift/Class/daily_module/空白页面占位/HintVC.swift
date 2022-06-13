@@ -31,7 +31,7 @@ class HintVC: RootHomeVC {
         self.navigationItem.rightBarButtonItems = [unknownItem,noDataItem,noNetworkItem,loadFilureItem]
     }
     @objc func unknownItemAction() {
-        self.hintView.show(in: self.view, scene: .unknown)
+        self.hintView.show(in: self.view, scene: .noNetwork)
     }
     @objc func noDataItemAction() {
         self.hintView.show(in: self.view, scene: .noData)
@@ -44,7 +44,7 @@ class HintVC: RootHomeVC {
     }
 }
 extension HintVC: JJHintViewDelegate {
-    func dg_hintViewButtonPressed(hintView: JJHintView) {
+    func dg_hintViewButtonPressed(hintView: JJHintView, scene: JJHintScene?) {
         hintView.hide()
     }
 }
