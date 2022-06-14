@@ -20,7 +20,7 @@ class SystemFontVC: RootHomeVC {
         return tempArr
     }
     lazy var tableView: UITableView = {
-        let view = UITableView(frame: mainViewFrame, style: .plain)
+        let view = UITableView(frame: minViewFrame, style: .plain)
         view.delegate = self
         view.dataSource = self
         view.separatorStyle = .none

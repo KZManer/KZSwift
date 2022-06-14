@@ -16,11 +16,12 @@ class DailyHomeVC: RootHomeVC {
     var titles: [String] {
         return infos.map() { $0.kTitle ?? "" }
     }
+    
     //MARK: Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
         doNavUI()
-        let mainView = MainView(frame: mainViewFrame, source: titles)
+        let mainView = MainView(frame: minViewFrame, source: titles)
         mainView.delegate = self
         self.view.addSubview(mainView)
     }
@@ -31,6 +32,14 @@ class DailyHomeVC: RootHomeVC {
         titleIV.layer.cornerRadius = 10
         titleIV.clipsToBounds = true
         self.navigationItem.titleView = titleIV
+        
+        let toolsItem = UIBarButtonItem(title: "tools", style: .plain, target: self, action: #selector(pressedToolsItem))
+        self.navigationItem.rightBarButtonItem = toolsItem
+    }
+    @objc func pressedToolsItem() {
+        let vc = ToolsVC()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

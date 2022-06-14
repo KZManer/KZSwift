@@ -17,7 +17,7 @@ class TestHomeVC: RootHomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         doNavUI()
-        let mainView = MainView(frame: mainViewFrame, source: titles)
+        let mainView = MainView(frame: minViewFrame, source: titles)
         mainView.delegate = self
         self.view.addSubview(mainView)
     }

@@ -28,6 +28,7 @@
 		09A14482285836B4001E9280 /* SPPageMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A14480285836B4001E9280 /* SPPageMenuVC.swift */; };
 		09A144852858385E001E9280 /* SystemFontVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A144842858385E001E9280 /* SystemFontVC.swift */; };
 		09A144882858448B001E9280 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A144872858448B001E9280 /* MainView.swift */; };
+		09A1448B28586B6A001E9280 /* ToolsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1448A28586B6A001E9280 /* ToolsVC.swift */; };
 		29037D48283C68F8001FB744 /* JJShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29037D47283C68F8001FB744 /* JJShimmerView.swift */; };
 		29037D4A283C6927001FB744 /* ShimmerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29037D49283C6927001FB744 /* ShimmerVC.swift */; };
 		29037D4F283CBB6F001FB744 /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29037D4E283CBB6F001FB744 /* WebViewVC.swift */; };
@@ -81,6 +82,7 @@
 		09A14480285836B4001E9280 /* SPPageMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPageMenuVC.swift; sourceTree = "<group>"; };
 		09A144842858385E001E9280 /* SystemFontVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFontVC.swift; sourceTree = "<group>"; };
 		09A144872858448B001E9280 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		09A1448A28586B6A001E9280 /* ToolsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsVC.swift; sourceTree = "<group>"; };
 		29037D47283C68F8001FB744 /* JJShimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJShimmerView.swift; sourceTree = "<group>"; };
 		29037D49283C6927001FB744 /* ShimmerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerVC.swift; sourceTree = "<group>"; };
 		29037D4E283CBB6F001FB744 /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				04361FB42796A2720090F31A /* DailyHomeVC.swift */,
+				09A1448928586B50001E9280 /* 工具页面 */,
 				09A144832858385E001E9280 /* 系统字体 */,
 				29E6C149283DC2D000198372 /* 不规则图形 */,
 				29037D55283CDCA8001FB744 /* 黑魔法方法交换 */,
@@ -254,6 +257,14 @@
 				09A144872858448B001E9280 /* MainView.swift */,
 			);
 			path = public;
+			sourceTree = "<group>";
+		};
+		09A1448928586B50001E9280 /* 工具页面 */ = {
+			isa = PBXGroup;
+			children = (
+				09A1448A28586B6A001E9280 /* ToolsVC.swift */,
+			);
+			path = "工具页面";
 			sourceTree = "<group>";
 		};
 		29037D46283C68E1001FB744 /* 加载动画 */ = {
@@ -565,6 +576,7 @@
 				29EC685A283B6A7B004F2D39 /* DNavigationBarVC3.swift in Sources */,
 				294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */,
 				0956EFB62856CBF100D1038B /* JJHintView.swift in Sources */,
+				09A1448B28586B6A001E9280 /* ToolsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

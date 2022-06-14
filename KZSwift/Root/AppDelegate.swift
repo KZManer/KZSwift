@@ -16,19 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var networkManager = NetworkReachabilityManager()
     
+    //MARK: - System Method
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
 #if DEBUG
         injection()
 #endif
-        
         window?.frame = UIScreen.main.bounds
         let tabbarVC = TabBarVC.init()
         window?.rootViewController = tabbarVC
         window?.makeKeyAndVisible()
-        
         self.monitorNetworkStatus()
-        
+        showSplashView()
         return true
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -55,26 +54,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        showSplashView()
+    }
     
+    //MARK: - Custom Method
+    func showSplashView() {
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "launch_image")
+        imageView.frame = UIScreen.main.bounds
+        self.window?.addSubview(imageView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            imageView.removeFromSuperview()
+        }
+    }
     ///网络状态监听
     private func monitorNetworkStatus() {
         self.networkManager?.startListening(onQueue: DispatchQueue.main, onUpdatePerforming: { status in
             switch status {
             case .notReachable://没有网络链接
-//                self.hasNetwork = false
-//                self.networkStatus = .noNetwork
                 KLog(message: "没有网络链接")
             case .unknown://网络状态未知
-//                self.hasNetwork = true
-//                self.networkStatus = .unknown
                 KLog(message: "网络状态未知")
             case .reachable(.ethernetOrWiFi)://以太网或者wifi
-//                self.hasNetwork = true
-//                self.networkStatus = .wifi
                 KLog(message: "以太网或者wifi")
             case .reachable(.cellular)://蜂窝数据
-//                self.hasNetwork = true
-//                self.networkStatus = .cellular
                 KLog(message: "蜂窝数据")
             }
         })

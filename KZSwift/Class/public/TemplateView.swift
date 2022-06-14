@@ -27,7 +27,7 @@ class TemplateView: UIView {
     }
     
     func doViewUI() {
-        
+        self.backgroundColor = .rgbSame(rgb: 240)
         guard let titles = titles else { return }
         var oldBtn = UIButton()
         let btnHeight = 40.0
