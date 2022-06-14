@@ -33,8 +33,16 @@ class DailyHomeVC: RootHomeVC {
         titleIV.clipsToBounds = true
         self.navigationItem.titleView = titleIV
         
+        let deleteItem = UIBarButtonItem(title: "delete", style: .plain, target: self, action: #selector(pressedDeleteItem))
+        self.navigationItem.leftBarButtonItem = deleteItem
+        
         let toolsItem = UIBarButtonItem(title: "tools", style: .plain, target: self, action: #selector(pressedToolsItem))
         self.navigationItem.rightBarButtonItem = toolsItem
+    }
+    @objc func pressedDeleteItem() {
+        let vc = DeleteVC()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pressedToolsItem() {
         let vc = ToolsVC()
