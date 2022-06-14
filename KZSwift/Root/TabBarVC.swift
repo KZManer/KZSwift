@@ -13,12 +13,13 @@ class TabBarVC: UITabBarController {
         super.viewDidLoad()
         
         let vcs = [
-            DailyHomeVC.init(),
-            ProjectHomeVC.init(),
-            TestHomeVC.init(),
+            DailyHomeVC(),
+            ThirdLibVC(),
+            ProjectHomeVC(),
+            TestHomeVC(),
         ]
-        let titles = ["日常记录","项目预写","实验"]
-        let picImageMiddleNames = ["home","project","test"]
+        let titles = ["daily","3rd_lib","pre-writing","test"]
+        let picImageMiddleNames = ["home","3rd","project","test"]
         
         var controllers = [UIViewController]()
         
@@ -26,7 +27,7 @@ class TabBarVC: UITabBarController {
         for title in titles {
             let vc = vcs[i]
             
-            let nav = RootNavigationController.init(rootViewController: vc)
+            let nav = RootNavController.init(rootViewController: vc)
             //默认展示图片
             nav.tabBarItem.image = UIImage.init(named: "tabbar_nor_" + picImageMiddleNames[i])?.withRenderingMode(.alwaysOriginal)
             //选中时的图片

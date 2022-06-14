@@ -16,7 +16,7 @@ class DailyHomeVC: RootHomeVC {
         return KCellModel.dailyInfos()
     }
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: .plain)
+        let tableView = UITableView(frame: mainViewFrame, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -28,7 +28,7 @@ class DailyHomeVC: RootHomeVC {
         super.viewDidLoad()
         doNavUI()
         self.view.addSubview(self.tableView)
-        KLog(message: "34:D7:12:9B:3A:89".md5)
+        
     }
     
     //MARK: Custom Method
@@ -40,29 +40,7 @@ class DailyHomeVC: RootHomeVC {
     }
 
 }
-import CommonCrypto
-public extension String {
-    /* ################################################################## */
-    /**
-     - returns: the String, as an MD5 hash.
-     */
-    var md5: String {
-        let str = self.cString(using: String.Encoding.utf8)
-        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
-        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-        CC_MD5(str!, strLen, result)
 
-        let hash = NSMutableString()
-
-        for i in 0..<digestLen {
-            hash.appendFormat("%02x", result[i])
-        }
-
-        result.deallocate()
-        return hash as String
-    }
-}
 extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,39 +64,13 @@ extension DailyHomeVC: UITableViewDataSource,UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cellInfo = self.infos[indexPath.row]
-        var showVC: UIViewController?
-        switch cellInfo.kId {
-        case "template":
-            showVC = TemplateVC()
-        case "navigationBar":
-            showVC = DNavigationBarVC()
-        case "loadingAnimation":
-            showVC = ShimmerVC()
-        case "wkwebview":
-            showVC = WebViewVC()
-        case "methodSwizzling":
-            showVC = MethodSwizzlingVC()
-        case "shape":
-            showVC = ShapeVC()
-        case "placeholder":
-            showVC = HintVC()
-        case "DZNEmptyDataSet":
-            showVC = DZNEmptyDataVC()
-        case "KeychainAccess":
-            showVC = KeychainVC()
-        case "alamofire":
-            showVC = AlamofireVC()
-        case "swiftyJSON":
-            showVC = SwiftyJSONVC()
-        case .none:
-            break
-        case .some(_):
-            break
+
+        guard let toVC = cellInfo.kVC else {
+            self.view.makeToast("未找到对应的ViewController")
+            return
         }
-        if let vc = showVC {
-            vc.hidesBottomBarWhenPushed = true
-            vc.title = cellInfo.kTitle
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        toVC.hidesBottomBarWhenPushed = true
+        toVC.title = cellInfo.kTitle
+        self.navigationController?.pushViewController(toVC, animated: true)
     }
 }

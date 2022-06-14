@@ -1,5 +1,5 @@
 //
-//  RootNavigationController.swift
+//  RootNavController.swift
 //  KZSwift
 //
 //  Created by KZ on 2022/5/23.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-class RootNavigationController: UINavigationController {
+class RootNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class RootNavigationController: UINavigationController {
 }
 
 
-extension RootNavigationController {
+extension RootNavController {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if viewControllers.count < 2 {
             return false

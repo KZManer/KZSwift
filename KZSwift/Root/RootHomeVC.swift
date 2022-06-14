@@ -10,6 +10,9 @@ import KMNavigationBarTransition
 
 class RootHomeVC: UIViewController {
     let bgColor = UIColor.rgb(r: 20, g: 32, b: 51)
+    var mainViewFrame: CGRect {
+        return CGRect(x: 0, y: 0, width: width_screen, height: KTools.height_active_min())
+    }
     //MARK: Override Method
     override func viewDidLoad() {
         super.viewDidLoad()

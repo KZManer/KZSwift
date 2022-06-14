@@ -62,7 +62,7 @@ extension ProjectHomeVC: UITableViewDataSource,UITableViewDelegate {
         let cellInfo = self.infos[indexPath.row]
         var showVC: UIViewController?
         switch cellInfo.kId {
-        case "active":
+        case .active:
             showVC = ActiveVC()
         case .none:
             break

@@ -12,9 +12,9 @@ class DNavigationBarVC: RootHomeVC {
     var infos: [KCellModel] {
         get {
             return [
-                KCellModel.init(title: "导航栏跟随默认设置", id: "one"),
-                KCellModel.init(title: "自定义导航栏颜色", id: "two"),
-                KCellModel.init(title: "隐藏导航栏", id: "three")
+                KCellModel.init(title: "导航栏跟随默认设置", strId: "one"),
+                KCellModel.init(title: "自定义导航栏颜色", strId: "two"),
+                KCellModel.init(title: "隐藏导航栏", strId: "three")
             ]
         }
     }
@@ -74,7 +74,7 @@ extension DNavigationBarVC: UITableViewDataSource,UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         var showVC: UIViewController?
         let cellInfo = infos[indexPath.row]
-        switch cellInfo.kId {
+        switch cellInfo.kStrId {
         case "one":
             showVC = DNavigationBarVC1()
         case "two":
