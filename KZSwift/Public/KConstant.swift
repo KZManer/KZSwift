@@ -13,4 +13,4 @@ extension DefaultsKeys {
 //    var activateDate: DefaultsKey<String?> {.init("activateDate")}
 }
 
-let JJ_Host = "http://t-nav.jijiakeji-co.com/"
+let JJ_Host = ""

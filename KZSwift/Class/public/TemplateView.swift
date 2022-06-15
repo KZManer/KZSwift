@@ -35,8 +35,8 @@ class TemplateView: UIView {
         for (index,name) in titles.enumerated() {
             let button = UIButton(type: .system)
             button.setTitle(name, for: .normal)
-            button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .randomColor(alpha: 0.5)
+            button.setTitleColor(.randomTupleColor().fgColor, for: .normal)
+            button.backgroundColor = .randomTupleColor().bgColor
             button.addTarget(self, action: #selector(pressedButton(sender:)), for: .touchUpInside)
             self.addSubview(button)
             button.snp.makeConstraints { make in
