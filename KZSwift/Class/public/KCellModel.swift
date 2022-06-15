@@ -13,7 +13,7 @@ class KCellModel: NSObject {
         case navigationBar,loadingAnimation,placeholder,wkwebview,methodSwizzling,shape,date,systemFont
         case DZNEmptyDataSet,KeychainAccess,Alamofire,SwiftyJSON,JXSegmentedView,SPPageMenu
         case active
-        case direction
+        case direction,cycle
     }
     
     var kTitle: String!
@@ -65,10 +65,11 @@ class KCellModel: NSObject {
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }
-    //test module source
+    //record module source
     static func testInfos() -> Array<KCellModel> {
         let arr:[KCellModel] = [
             .init("手机方向", .direction, DirectionVC()),
+            .init("循环引用问题", .cycle, CycleVC()),
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }

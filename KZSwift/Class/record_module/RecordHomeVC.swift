@@ -1,5 +1,5 @@
 //
-//  TestHomeVC.swift
+//  RecordHomeVC.swift
 //  KZSwift
 //
 //  Created by Zzz... on 2022/1/18.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestHomeVC: RootHomeVC {
+class RecordHomeVC: RootHomeVC {
     var infos: [KCellModel] {
         return KCellModel.testInfos()
     }
@@ -29,7 +29,7 @@ class TestHomeVC: RootHomeVC {
         self.navigationItem.titleView = titleIV
     }
 }
-extension TestHomeVC: MainViewDelegate {
+extension RecordHomeVC: MainViewDelegate {
     func dg_didSelectRowAt(index: Int) {
         let cellInfo = self.infos[index]
         guard let toVC = cellInfo.kVC else {

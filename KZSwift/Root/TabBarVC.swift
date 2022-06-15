@@ -16,10 +16,10 @@ class TabBarVC: UITabBarController {
             DailyHomeVC(),
             ThirdLibVC(),
             ProjectHomeVC(),
-            TestHomeVC(),
+            RecordHomeVC(),
         ]
-        let titles = ["daily","3rd_lib","pre-writing","test"]
-        let picImageMiddleNames = ["home","3rd","project","test"]
+        let titles = ["daily","3rd_lib","pre-writing","record"]
+        let picImageMiddleNames = ["home","3rd","project","record"]
         
         var controllers = [UIViewController]()
         

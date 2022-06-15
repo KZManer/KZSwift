@@ -13,7 +13,7 @@
 		04361FA127969FAA0090F31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04361FA027969FAA0090F31A /* Assets.xcassets */; };
 		04361FA427969FAA0090F31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04361FA227969FAA0090F31A /* LaunchScreen.storyboard */; };
 		04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FAB2796A18C0090F31A /* TabBarVC.swift */; };
-		04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB02796A25D0090F31A /* TestHomeVC.swift */; };
+		04361FB12796A25D0090F31A /* RecordHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB02796A25D0090F31A /* RecordHomeVC.swift */; };
 		04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB22796A2680090F31A /* ProjectHomeVC.swift */; };
 		04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB42796A2720090F31A /* DailyHomeVC.swift */; };
 		093706522856CEE100445EDF /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093706512856CEE100445EDF /* TemplateView.swift */; };
@@ -21,6 +21,7 @@
 		09370657285713BB00445EDF /* DirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370656285713BB00445EDF /* DirectionVC.swift */; };
 		0937065A285738D300445EDF /* SwiftyJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370659285738D300445EDF /* SwiftyJSONVC.swift */; };
 		0956EFB62856CBF100D1038B /* JJHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956EFB52856CBF000D1038B /* JJHintView.swift */; };
+		098C4A3E2859731100A79FA5 /* CycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A3D2859731100A79FA5 /* CycleVC.swift */; };
 		09A144762858207C001E9280 /* ThirdLibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A144752858207C001E9280 /* ThirdLibVC.swift */; };
 		09A1447B2858354C001E9280 /* JXSegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1447A2858354C001E9280 /* JXSegmentedVC.swift */; };
 		09A1447D285835EF001E9280 /* ListBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1447C285835EF001E9280 /* ListBaseViewController.swift */; };
@@ -68,7 +69,7 @@
 		04361FA327969FAA0090F31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04361FA527969FAA0090F31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04361FAB2796A18C0090F31A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
-		04361FB02796A25D0090F31A /* TestHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeVC.swift; sourceTree = "<group>"; };
+		04361FB02796A25D0090F31A /* RecordHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHomeVC.swift; sourceTree = "<group>"; };
 		04361FB22796A2680090F31A /* ProjectHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHomeVC.swift; sourceTree = "<group>"; };
 		04361FB42796A2720090F31A /* DailyHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHomeVC.swift; sourceTree = "<group>"; };
 		093706512856CEE100445EDF /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		09370656285713BB00445EDF /* DirectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVC.swift; sourceTree = "<group>"; };
 		09370659285738D300445EDF /* SwiftyJSONVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONVC.swift; sourceTree = "<group>"; };
 		0956EFB52856CBF000D1038B /* JJHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJHintView.swift; sourceTree = "<group>"; };
+		098C4A3D2859731100A79FA5 /* CycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleVC.swift; sourceTree = "<group>"; };
 		09A144752858207C001E9280 /* ThirdLibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdLibVC.swift; sourceTree = "<group>"; };
 		09A1447A2858354C001E9280 /* JXSegmentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXSegmentedVC.swift; sourceTree = "<group>"; };
 		09A1447C285835EF001E9280 /* ListBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBaseViewController.swift; sourceTree = "<group>"; };
@@ -186,13 +188,14 @@
 			path = project_module;
 			sourceTree = "<group>";
 		};
-		04361FAF2796A2440090F31A /* test_module */ = {
+		04361FAF2796A2440090F31A /* record_module */ = {
 			isa = PBXGroup;
 			children = (
-				04361FB02796A25D0090F31A /* TestHomeVC.swift */,
+				04361FB02796A25D0090F31A /* RecordHomeVC.swift */,
+				098C4A3C285972E400A79FA5 /* 循环引用问题 */,
 				09370655285713AD00445EDF /* 手机方向 */,
 			);
-			path = test_module;
+			path = record_module;
 			sourceTree = "<group>";
 		};
 		09370655285713AD00445EDF /* 手机方向 */ = {
@@ -209,6 +212,14 @@
 				09370659285738D300445EDF /* SwiftyJSONVC.swift */,
 			);
 			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		098C4A3C285972E400A79FA5 /* 循环引用问题 */ = {
+			isa = PBXGroup;
+			children = (
+				098C4A3D2859731100A79FA5 /* CycleVC.swift */,
+			);
+			path = "循环引用问题";
 			sourceTree = "<group>";
 		};
 		09A1447428582047001E9280 /* 3rd_module */ = {
@@ -328,7 +339,7 @@
 				04361FAD2796A2050090F31A /* daily_module */,
 				09A1447428582047001E9280 /* 3rd_module */,
 				04361FAE2796A23B0090F31A /* project_module */,
-				04361FAF2796A2440090F31A /* test_module */,
+				04361FAF2796A2440090F31A /* record_module */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -536,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09370657285713BB00445EDF /* DirectionVC.swift in Sources */,
+				098C4A3E2859731100A79FA5 /* CycleVC.swift in Sources */,
 				29EC6851283B4106004F2D39 /* KCellModel.swift in Sources */,
 				294E1AEA284DD3E60038EBD3 /* KConstant.swift in Sources */,
 				29EC6856283B638B004F2D39 /* DNavigationBarVC1.swift in Sources */,
@@ -563,7 +575,7 @@
 				294E1AE7284DB79D0038EBD3 /* ActiveVC.swift in Sources */,
 				29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */,
 				29EC685E283B6DE9004F2D39 /* RootNavController.swift in Sources */,
-				04361FB12796A25D0090F31A /* TestHomeVC.swift in Sources */,
+				04361FB12796A25D0090F31A /* RecordHomeVC.swift in Sources */,
 				29E6C14B283DC30F00198372 /* ShapeVC.swift in Sources */,
 				299355AB284F576800303938 /* String+Ex.swift in Sources */,
 				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
