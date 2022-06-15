@@ -61,13 +61,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Custom Method
     func showSplashView() {
         
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "launch_image")
-        imageView.frame = UIScreen.main.bounds
-        self.window?.addSubview(imageView)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            imageView.removeFromSuperview()
-        }
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "launch_image")
+//        imageView.frame = UIScreen.main.bounds
+//        self.window?.addSubview(imageView)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            imageView.removeFromSuperview()
+//        }
     }
     ///网络状态监听
     private func monitorNetworkStatus() {
@@ -104,8 +104,13 @@ func KLog<T>(message:T,file:String=#file,method:String=#function,line:Int=#line)
 #if DEBUG
     
     let fileName = (file as NSString).lastPathComponent
-    
-    print("\(fileName)-\(line)line:\(message)")
+    //获取当前时间
+    let now = Date()
+    // 创建一个日期格式器
+    let dformatter = DateFormatter()
+    dformatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+    print("\(fileName)-\(now)-\(line)line:\(message)")
+//    print("\(fileName)-\(line)line:\(message)")
     
 #endif
 }

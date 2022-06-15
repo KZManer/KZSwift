@@ -32,10 +32,12 @@ class RecordHomeVC: RootHomeVC {
 extension RecordHomeVC: MainViewDelegate {
     func dg_didSelectRowAt(index: Int) {
         let cellInfo = self.infos[index]
-        guard let toVC = cellInfo.kVC else {
+        
+        guard let cls = cellInfo.kCls else {
             self.view.makeToast("未找到对应的ViewController")
             return
         }
+        let toVC = cls.init()
         toVC.hidesBottomBarWhenPushed = true
         toVC.title = cellInfo.kTitle
         self.navigationController?.pushViewController(toVC, animated: true)

@@ -13,13 +13,25 @@ protocol TemplateViewDelegate: NSObjectProtocol {
 
 class TemplateView: UIView {
     
+    let kCellId = "TemplateCellId"
     var delegate: TemplateViewDelegate?
     var titles: [String]?
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: self.frame, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        tableView.register(TemplateCell.self, forCellReuseIdentifier: kCellId)
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
     
     init(frame: CGRect, titles:[String]) {
         super.init(frame: frame)
         self.titles = titles
-        doViewUI()
+        self.addSubview(tableView)
+//        doViewUI()
     }
     
     required init?(coder: NSCoder) {
@@ -60,5 +72,59 @@ class TemplateView: UIView {
             self.delegate?.dg_buttonPressed(index: index, title: btnTitle)
         }
         
+    }
+}
+extension TemplateView: UITableViewDataSource,UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellId, for: indexPath) as! TemplateCell
+        cell.selectionStyle = .blue
+        if let arr = titles {
+            let title = arr[indexPath.row]
+            cell.echoContent(title: title)
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let arr = titles {
+            self.delegate?.dg_buttonPressed(index: indexPath.row, title: arr[indexPath.row])
+        }
+    }
+}
+
+class TemplateCell: UITableViewCell {
+   
+    lazy var showLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .randomTupleColor().bgColor
+        label.textColor = .randomTupleColor().fgColor
+        label.textAlignment = .center
+        return label
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.addSubview(showLabel)
+        showLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.equalTo(40)
+            make.width.equalToSuperview().multipliedBy(0.6)
+        }
+        showLabel.layer.cornerRadius = 20
+        showLabel.layer.masksToBounds = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    public func echoContent(title: String) {
+        showLabel.text = title
     }
 }

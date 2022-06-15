@@ -22,6 +22,8 @@
 		0937065A285738D300445EDF /* SwiftyJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370659285738D300445EDF /* SwiftyJSONVC.swift */; };
 		0956EFB62856CBF100D1038B /* JJHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956EFB52856CBF000D1038B /* JJHintView.swift */; };
 		098C4A3E2859731100A79FA5 /* CycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A3D2859731100A79FA5 /* CycleVC.swift */; };
+		098C4A412859840300A79FA5 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A402859840300A79FA5 /* TimerVC.swift */; };
+		098C4A432859B10300A79FA5 /* KTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A422859B10300A79FA5 /* KTimer.swift */; };
 		09A144762858207C001E9280 /* ThirdLibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A144752858207C001E9280 /* ThirdLibVC.swift */; };
 		09A1447B2858354C001E9280 /* JXSegmentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1447A2858354C001E9280 /* JXSegmentedVC.swift */; };
 		09A1447D285835EF001E9280 /* ListBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A1447C285835EF001E9280 /* ListBaseViewController.swift */; };
@@ -78,6 +80,8 @@
 		09370659285738D300445EDF /* SwiftyJSONVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONVC.swift; sourceTree = "<group>"; };
 		0956EFB52856CBF000D1038B /* JJHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJHintView.swift; sourceTree = "<group>"; };
 		098C4A3D2859731100A79FA5 /* CycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleVC.swift; sourceTree = "<group>"; };
+		098C4A402859840300A79FA5 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
+		098C4A422859B10300A79FA5 /* KTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTimer.swift; sourceTree = "<group>"; };
 		09A144752858207C001E9280 /* ThirdLibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdLibVC.swift; sourceTree = "<group>"; };
 		09A1447A2858354C001E9280 /* JXSegmentedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXSegmentedVC.swift; sourceTree = "<group>"; };
 		09A1447C285835EF001E9280 /* ListBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBaseViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				04361FB02796A25D0090F31A /* RecordHomeVC.swift */,
+				098C4A3F285983EB00A79FA5 /* 定时器 */,
 				098C4A3C285972E400A79FA5 /* 循环引用问题 */,
 				09370655285713AD00445EDF /* 手机方向 */,
 			);
@@ -220,6 +225,15 @@
 				098C4A3D2859731100A79FA5 /* CycleVC.swift */,
 			);
 			path = "循环引用问题";
+			sourceTree = "<group>";
+		};
+		098C4A3F285983EB00A79FA5 /* 定时器 */ = {
+			isa = PBXGroup;
+			children = (
+				098C4A422859B10300A79FA5 /* KTimer.swift */,
+				098C4A402859840300A79FA5 /* TimerVC.swift */,
+			);
+			path = "定时器";
 			sourceTree = "<group>";
 		};
 		09A1447428582047001E9280 /* 3rd_module */ = {
@@ -566,6 +580,7 @@
 				291F5F142839028F00570E58 /* RootHomeVC.swift in Sources */,
 				294E1AED284DFC220038EBD3 /* KeychainVC.swift in Sources */,
 				2971E3212855F195004DBAC0 /* AlamofireVC.swift in Sources */,
+				098C4A432859B10300A79FA5 /* KTimer.swift in Sources */,
 				29EC6858283B6694004F2D39 /* DNavigationBarVC2.swift in Sources */,
 				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
 				29037D51283CBC0D001FB744 /* ShimmerProtocol.swift in Sources */,
@@ -580,6 +595,7 @@
 				299355AB284F576800303938 /* String+Ex.swift in Sources */,
 				04361FAC2796A18C0090F31A /* TabBarVC.swift in Sources */,
 				291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */,
+				098C4A412859840300A79FA5 /* TimerVC.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,
 				09A14481285836B4001E9280 /* SPPageMenuChildVC.swift in Sources */,
 				294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */,
