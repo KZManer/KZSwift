@@ -22,8 +22,13 @@ class ProjectHomeVC: RootHomeVC {
         mainView.backgroundColor = .lightGray
         self.view.addSubview(mainView)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nav_navigationBarShow()
+    }
     //MARK: Custom Method
     func doNavUI() {
+        
         let titleIV = UIImageView(image: UIImage(named: "nav_logo1"))
         titleIV.layer.cornerRadius = 10
         titleIV.clipsToBounds = true

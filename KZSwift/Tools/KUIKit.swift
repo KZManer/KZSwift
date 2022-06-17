@@ -163,6 +163,10 @@ extension UIViewController: UIGestureRecognizerDelegate {
     func nav_navigationBarHide() {
         self.navigationController?.navigationBar.isHidden = true
     }
+    ///展示导航栏
+    func nav_navigationBarShow() {
+        self.navigationController?.navigationBar.isHidden = false
+    }
 }
 
 //MARK: UIView扩展
