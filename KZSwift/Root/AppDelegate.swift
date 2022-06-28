@@ -114,3 +114,14 @@ func KLog<T>(message:T,file:String=#file,method:String=#function,line:Int=#line)
     
 #endif
 }
+
+/**
+1、使用injected热重载，在VC里加入以下代码
+ @objc func injected() {
+     self.viewDidLoad()
+ }
+ 
+ 
+ 
+ 
+ */

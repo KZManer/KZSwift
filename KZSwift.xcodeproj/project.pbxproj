@@ -17,11 +17,13 @@
 		04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB22796A2680090F31A /* ProjectHomeVC.swift */; };
 		04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB42796A2720090F31A /* DailyHomeVC.swift */; };
 		0927A5E4285C042D00CE2AF6 /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */; };
+		09364DF1286470ED00EA86BF /* JavaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09364DF0286470ED00EA86BF /* JavaVC.swift */; };
 		093706522856CEE100445EDF /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093706512856CEE100445EDF /* TemplateView.swift */; };
 		09370654285710E200445EDF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370653285710E200445EDF /* Config.swift */; };
 		09370657285713BB00445EDF /* DirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370656285713BB00445EDF /* DirectionVC.swift */; };
 		0937065A285738D300445EDF /* SwiftyJSONVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09370659285738D300445EDF /* SwiftyJSONVC.swift */; };
 		0956EFB62856CBF100D1038B /* JJHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0956EFB52856CBF000D1038B /* JJHintView.swift */; };
+		0978A8AF2869C15A00A059A3 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0978A8AE2869C15A00A059A3 /* PTools.swift */; };
 		097AD597285AC7E000B0A5EB /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AD596285AC7E000B0A5EB /* LockView.swift */; };
 		098C4A3E2859731100A79FA5 /* CycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A3D2859731100A79FA5 /* CycleVC.swift */; };
 		098C4A412859840300A79FA5 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A402859840300A79FA5 /* TimerVC.swift */; };
@@ -78,11 +80,13 @@
 		04361FB22796A2680090F31A /* ProjectHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHomeVC.swift; sourceTree = "<group>"; };
 		04361FB42796A2720090F31A /* DailyHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHomeVC.swift; sourceTree = "<group>"; };
 		0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
+		09364DF0286470ED00EA86BF /* JavaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaVC.swift; sourceTree = "<group>"; };
 		093706512856CEE100445EDF /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		09370653285710E200445EDF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		09370656285713BB00445EDF /* DirectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVC.swift; sourceTree = "<group>"; };
 		09370659285738D300445EDF /* SwiftyJSONVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSONVC.swift; sourceTree = "<group>"; };
 		0956EFB52856CBF000D1038B /* JJHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJHintView.swift; sourceTree = "<group>"; };
+		0978A8AE2869C15A00A059A3 /* PTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		097AD596285AC7E000B0A5EB /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		098C4A3D2859731100A79FA5 /* CycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleVC.swift; sourceTree = "<group>"; };
 		098C4A402859840300A79FA5 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
@@ -203,11 +207,20 @@
 			isa = PBXGroup;
 			children = (
 				04361FB02796A25D0090F31A /* RecordHomeVC.swift */,
+				09364DEF286470DC00EA86BF /* Java联动 */,
 				098C4A3F285983EB00A79FA5 /* 定时器 */,
 				098C4A3C285972E400A79FA5 /* 循环引用问题 */,
 				09370655285713AD00445EDF /* 手机方向 */,
 			);
 			path = record_module;
+			sourceTree = "<group>";
+		};
+		09364DEF286470DC00EA86BF /* Java联动 */ = {
+			isa = PBXGroup;
+			children = (
+				09364DF0286470ED00EA86BF /* JavaVC.swift */,
+			);
+			path = "Java联动";
 			sourceTree = "<group>";
 		};
 		09370655285713AD00445EDF /* 手机方向 */ = {
@@ -347,6 +360,7 @@
 				299355A6284F27F000303938 /* DeviceManager.swift */,
 				29037D50283CBC0D001FB744 /* ShimmerProtocol.swift */,
 				299355AA284F576800303938 /* String+Ex.swift */,
+				0978A8AE2869C15A00A059A3 /* PTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -603,6 +617,7 @@
 				098C4A432859B10300A79FA5 /* KTimer.swift in Sources */,
 				29EC6858283B6694004F2D39 /* DNavigationBarVC2.swift in Sources */,
 				04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */,
+				09364DF1286470ED00EA86BF /* JavaVC.swift in Sources */,
 				29037D51283CBC0D001FB744 /* ShimmerProtocol.swift in Sources */,
 				04361F9C27969FA90090F31A /* ViewController.swift in Sources */,
 				299355A7284F27F000303938 /* DeviceManager.swift in Sources */,
@@ -628,6 +643,7 @@
 				29EC685A283B6A7B004F2D39 /* DNavigationBarVC3.swift in Sources */,
 				294F9E18283CE94400D15B21 /* MethodSwizzlingExtension.swift in Sources */,
 				0956EFB62856CBF100D1038B /* JJHintView.swift in Sources */,
+				0978A8AF2869C15A00A059A3 /* PTools.swift in Sources */,
 				09A1448B28586B6A001E9280 /* ToolsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

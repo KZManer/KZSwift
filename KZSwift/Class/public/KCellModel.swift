@@ -13,7 +13,7 @@ class KCellModel: NSObject {
         case navigationBar,loadingAnimation,placeholder,wkwebview,methodSwizzling,shape,date,systemFont
         case DZNEmptyDataSet,KeychainAccess,Alamofire,SwiftyJSON,JXSegmentedView,SPPageMenu
         case active,lock
-        case direction,cycle,timer
+        case direction,cycle,timer,java
     }
     
     var kTitle: String!
@@ -73,6 +73,7 @@ class KCellModel: NSObject {
             .init("手机方向", .direction, DirectionVC.self),
             .init("循环引用问题", .cycle, CycleVC.self),
             .init("定时器", .timer, TimerVC.self),
+            .init("Java联动", .java, JavaVC.self)
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }
