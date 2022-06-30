@@ -21,7 +21,7 @@ class ToolsVC: RootHomeVC {
         showLabel.frame = CGRect(x: 0, y: 0, width: width_screen, height: showLabelH)
         self.view.addSubview(showLabel)
         
-        let templateView = TemplateView(frame: CGRect(x: 0, y: showLabelH, width: width_screen, height: KTools.height_active_max() - showLabelH), titles: ["生成随机IDFA"])
+        let templateView = TemplateView(frame: CGRect(x: 0, y: showLabelH, width: width_screen, height: KTools.height_active_max() - showLabelH), titles: ["生成随机IDFA","生成随机imei号","生成随机oaid号","生成随机android id","当前时间戳"])
         templateView.delegate = self
         self.view.addSubview(templateView)
         
@@ -29,11 +29,20 @@ class ToolsVC: RootHomeVC {
 }
 extension ToolsVC: TemplateViewDelegate {
     func dg_buttonPressed(index: Int, title: String) {
+        var value = ""
         if title == "生成随机IDFA" {
-            let idfa = String.randomIDFA()
-            self.view.makeToast(idfa)
-            KLog(message: "IDFA：\(idfa)")
-            self.showLabel.text = idfa
+            value = String.randomIDFA()
+        } else if title == "生成随机imei号" {
+            value = String.randomIMEI()
+        } else if title == "生成随机oaid号" {
+            value = String.randomOAID()
+        } else if title == "生成随机android id" {
+            value = String.randomAndroidID()
+        } else if title == "当前时间戳" {
+            value = "\(Date.currentTimestamp)"
         }
+        self.view.makeToast("\(value.count)位")
+        KLog(message: "value is \(value)")
+        self.showLabel.text = value
     }
 }

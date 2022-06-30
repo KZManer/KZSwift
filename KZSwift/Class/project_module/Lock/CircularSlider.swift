@@ -18,7 +18,7 @@ class CircularSlider: UIControl {
     }
     public  var minimumValue : CGFloat  = 0.0
     public  var maximumValue : CGFloat  = 1.0
-    public  var filledColor  : UIColor = .blue
+    public  var filledColor  : UIColor = .orange
     public  var unfilledColor: UIColor = .lightGray
     private var radius       : CGFloat = 0.0
     private var centerPoint  : CGPoint = .zero
@@ -36,7 +36,7 @@ class CircularSlider: UIControl {
     
     //MARK: - Configuration
     func doDefaults() {
-        self.backgroundColor = .clear
+        self.backgroundColor = .orange
     }
     //MARK: - Layout
     override func layoutSubviews() {
@@ -50,7 +50,7 @@ class CircularSlider: UIControl {
         let diameter = radius * 2.0
         let context1 = UIGraphicsGetCurrentContext()
         
-        //unfilled part
+        //unfilled part - 外圆
         unfilledColor.setFill()
         let contourRect = CGRect(x: centerPoint.x - radius, y: centerPoint.y - radius, width: diameter, height: diameter)
         
@@ -65,6 +65,16 @@ class CircularSlider: UIControl {
         context.addArc(center: centerPoint, radius: radius, startAngle: -Double.pi/2, endAngle: radiansFromDegrees(degrees: degrees) - Double.pi/2, clockwise: false)
         context.addLine(to: centerPoint)
         context.closePath()
+        context.fillPath()
+        
+        //内圆
+        let space = radius * 0.2
+        let innerCircleX = centerPoint.x - radius + space
+        let innerCircleY = centerPoint.y - radius + space
+        let innerCircleW = diameter - space * 2
+        let innerCircleRect = CGRect(x: innerCircleX, y: innerCircleY, width: innerCircleW, height: innerCircleW)
+        LockTools.baseColor().setFill()
+        context.fillEllipse(in: innerCircleRect)
         context.fillPath()
     }
     

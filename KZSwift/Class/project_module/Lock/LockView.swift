@@ -12,7 +12,7 @@ protocol LockViewDelegate {
     func dg_pressedBeginBtn()
 }
 class LockView: UIView {
-    private let kBaseColor = UIColor.rgb(r: 68, g: 147, b: 116)
+    
     var delegate: LockViewDelegate?
     
     lazy var titleLabel: UILabel = {
@@ -41,7 +41,7 @@ class LockView: UIView {
     
     //MARK: - Custom Method
     private func doViewUI() {
-        self.backgroundColor = kBaseColor
+        self.backgroundColor = LockTools.baseColor()
         /**导航栏view**/
         let navView = UIView()
         self.addSubview(navView)
@@ -75,7 +75,7 @@ class LockView: UIView {
         let sliderY = (self.frame.self.height - sliderWidth) / 2
         let sliderFrame = CGRect(x: sliderX, y: sliderY, width: sliderWidth, height: sliderWidth)
         let slider = CircularSlider(frame: sliderFrame)
-        slider.filledColor = .hex("#84bd00")
+        slider.filledColor = .hex("#1296db")
         slider.unfilledColor = .hex("#cbccd1")
         slider.minimumValue = 0
         slider.maximumValue = 120

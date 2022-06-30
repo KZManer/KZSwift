@@ -16,6 +16,7 @@
 		04361FB12796A25D0090F31A /* RecordHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB02796A25D0090F31A /* RecordHomeVC.swift */; };
 		04361FB32796A2680090F31A /* ProjectHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB22796A2680090F31A /* ProjectHomeVC.swift */; };
 		04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361FB42796A2720090F31A /* DailyHomeVC.swift */; };
+		090620F1286A91160086597F /* LockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090620F0286A91160086597F /* LockTools.swift */; };
 		0927A5E4285C042D00CE2AF6 /* CircularSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */; };
 		09364DF1286470ED00EA86BF /* JavaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09364DF0286470ED00EA86BF /* JavaVC.swift */; };
 		093706522856CEE100445EDF /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093706512856CEE100445EDF /* TemplateView.swift */; };
@@ -79,6 +80,7 @@
 		04361FB02796A25D0090F31A /* RecordHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHomeVC.swift; sourceTree = "<group>"; };
 		04361FB22796A2680090F31A /* ProjectHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHomeVC.swift; sourceTree = "<group>"; };
 		04361FB42796A2720090F31A /* DailyHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHomeVC.swift; sourceTree = "<group>"; };
+		090620F0286A91160086597F /* LockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTools.swift; sourceTree = "<group>"; };
 		0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSlider.swift; sourceTree = "<group>"; };
 		09364DF0286470ED00EA86BF /* JavaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaVC.swift; sourceTree = "<group>"; };
 		093706512856CEE100445EDF /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		098C4A462859FD1300A79FA5 /* Lock */ = {
 			isa = PBXGroup;
 			children = (
+				090620F0286A91160086597F /* LockTools.swift */,
 				0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */,
 				097AD596285AC7E000B0A5EB /* LockView.swift */,
 				098C4A472859FD5100A79FA5 /* LockVC.swift */,
@@ -632,6 +635,7 @@
 				291F5F0D2838FF7A00570E58 /* KTools.swift in Sources */,
 				098C4A412859840300A79FA5 /* TimerVC.swift in Sources */,
 				04361F9827969FA90090F31A /* AppDelegate.swift in Sources */,
+				090620F1286A91160086597F /* LockTools.swift in Sources */,
 				09A14481285836B4001E9280 /* SPPageMenuChildVC.swift in Sources */,
 				294F9E16283CDE4100D15B21 /* MethodSwizzlingVC.swift in Sources */,
 				04361FB52796A2720090F31A /* DailyHomeVC.swift in Sources */,
