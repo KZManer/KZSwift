@@ -12,6 +12,7 @@ class CircularSlider: UIControl {
 //    public  var value        : CGFloat  = 0.0
     public var value : CGFloat  = 0 {
         didSet {
+            KLog(message: value)
             self.setNeedsDisplay()
             self.sendActions(for: .valueChanged)
         }
@@ -23,9 +24,19 @@ class CircularSlider: UIControl {
     private var radius       : CGFloat = 0.0
     private var centerPoint  : CGPoint = .zero
 
+    lazy var circleView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .blue
+        let value = 30.0
+        imageView.frame = CGRect(x: self.frame.size.width/2.0-value/2.0, y: 0, width: value, height: value)
+        return imageView
+    }()
+    
     //MARK: - Override Method
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(circleView)
+        circleView.layer.cornerRadius = 15
         doDefaults()
     }
     required init?(coder: NSCoder) {
@@ -49,7 +60,7 @@ class CircularSlider: UIControl {
     override func draw(_ rect: CGRect) {
         let diameter = radius * 2.0
         let context1 = UIGraphicsGetCurrentContext()
-        
+
         //unfilled part - 外圆
         unfilledColor.setFill()
         let contourRect = CGRect(x: centerPoint.x - radius, y: centerPoint.y - radius, width: diameter, height: diameter)
@@ -68,7 +79,7 @@ class CircularSlider: UIControl {
         context.fillPath()
         
         //内圆
-        let space = radius * 0.2
+        let space = 30.0
         let innerCircleX = centerPoint.x - radius + space
         let innerCircleY = centerPoint.y - radius + space
         let innerCircleW = diameter - space * 2
@@ -76,6 +87,8 @@ class CircularSlider: UIControl {
         LockTools.baseColor().setFill()
         context.fillEllipse(in: innerCircleRect)
         context.fillPath()
+        
+        
     }
     
     //MARK: - Touch events
@@ -84,22 +97,44 @@ class CircularSlider: UIControl {
         //!!!: Warning
         //UITouch *touch = [touches anyObject];
         let touch = touches.first
-        if let point = touch?.location(in: self),
-           containsPoint(point: point) {
-            sendActions(for: .touchDown)
-            value = valueForPoint(point: point)
+
+        if let value = touch?.location(in: self.circleView) {
+//            KLog(message: "\(value.x) - \(value.y)")
+            let a = self.circleView.layer.contains(value)
+//            KLog(message: a)
         }
+        if let point = touch?.location(in: self.circleView),
+           let movePoint = touch?.location(in: self),
+           self.circleView.layer.contains(point) {
+            sendActions(for: .touchDown)
+            value = valueForPoint(point: movePoint)
+        }
+        
+//        if let point = touch?.location(in: self),
+//           containsPoint(point: point) {
+//            sendActions(for: .touchDown)
+//            value = valueForPoint(point: point)
+//        }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         let touch = touches.first
-        if let point = touch?.location(in: self) {
-            if containsPoint(point: point) {
+        
+        if let point = touch?.location(in: self.circleView) {
+            if self.circleView.layer.contains(point) {
                 sendActions(for: .touchUpInside)
             } else {
                 sendActions(for: .touchUpOutside)
             }
         }
+        
+//        if let point = touch?.location(in: self) {
+//            if containsPoint(point: point) {
+//                sendActions(for: .touchUpInside)
+//            } else {
+//                sendActions(for: .touchUpOutside)
+//            }
+//        }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
@@ -108,9 +143,16 @@ class CircularSlider: UIControl {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         let touch = touches.first
-        if let point = touch?.location(in: self) {
-            value = valueForPoint(point: point)
+        
+        if let point = touch?.location(in: self.circleView),
+           let movePoint = touch?.location(in: self),
+           self.circleView.layer.contains(point) {
+            value = valueForPoint(point: movePoint)
         }
+        
+//        if let point = touch?.location(in: self) {
+//            value = valueForPoint(point: point)
+//        }
     }
     
     //MARK: - Helpers

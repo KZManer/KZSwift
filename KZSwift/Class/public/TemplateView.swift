@@ -17,7 +17,7 @@ class TemplateView: UIView {
     var delegate: TemplateViewDelegate?
     var titles: [String]?
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.frame, style: .plain)
+        let tableView = UITableView(frame: self.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -76,7 +76,7 @@ class TemplateView: UIView {
 }
 extension TemplateView: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 70
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles?.count ?? 0
