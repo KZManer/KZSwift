@@ -47,8 +47,6 @@ class OceanEngineHandler {
     private let juliangActiveDate = "juliangActiveDate"
     //钥匙串中次流激活状态的key
     private let juliangNextDayOpenStatus = "juliangNextDayOpenStatus"
-    //AES加密的key
-    private let AESKey = "123"
     private var idfa: String  {
         let value = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         if value != "00000000-0000-0000-0000-000000000000" {
@@ -191,7 +189,7 @@ class OceanEngineHandler {
         //获取idfa
         let idfa = self.idfa
         //AES256加密idfa
-        guard let idfaAES = data_encode(original: idfa) else {
+        guard let idfaAES = idfa.aesEncode() else {
             KLog(message: "idfa加密失败")
             return
         }
@@ -215,6 +213,9 @@ class OceanEngineHandler {
             "signature":signatureMD5,
             "timestamp":timestamp
         ]
+        KLog(message: signatureMD5)
+        KLog(message: timestamp)
+        KLog(message: bodyJson)
         let urlString = "http://localhost/api/nav/transform/data"
         guard var request = try? URLRequest(url: urlString, method: .post, headers: headers) else { return }
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -255,18 +256,6 @@ class OceanEngineHandler {
               let endDate = dateFormatter.date(from: end) else { return -1 }
         let components = NSCalendar.current.dateComponents([.day], from: startDate,to: endDate)
         return components.day!
-    }
-    //string + AES加密 => base64
-    func data_encode(original value: String) -> String? {
-        
-        guard let aes = try? AES(key: Array(AESKey.utf8), blockMode: ECB(), padding: .pkcs5) else {
-            return nil
-        }
-        guard let encrypted = try? aes.encrypt(value.bytes) else {
-            return nil
-        }
-        let encryptedBase64 = encrypted.toBase64()
-        return encryptedBase64
     }
 }
 

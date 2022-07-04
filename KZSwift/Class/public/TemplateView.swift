@@ -10,12 +10,35 @@ import UIKit
 protocol TemplateViewDelegate: NSObjectProtocol {
     func dg_buttonPressed(index:Int, title:String)
 }
-
+let kTemplateCellOneColumnId = "TemplateCellOneColumnId"
+let kTemplateCellTwoColumnId = "TemplateCellTwoColumnId"
 class TemplateView: UIView {
     
-    let kCellId = "TemplateCellId"
+//    let kCellId = "TemplateCellOneColumnId"
+    let verSpace = 20.0
+    let oneHeight = 40.0
     var delegate: TemplateViewDelegate?
     var titles: [String]?
+    var columnn = 1
+    private var column: Int {
+        return columnn > 4 ? 4 : columnn
+    }
+    var kCellId: String {
+        if column == 2 { return kTemplateCellTwoColumnId }
+        return kTemplateCellOneColumnId
+    }
+    var buttonSpace: (space:Double, width:Double) {
+        let frameWidth = self.frame.self.width;
+        //默认按一列来计算
+        var width:Double = frameWidth * 0.6
+        var space = (frameWidth - width) / 2.0
+        if column > 1 {
+            space = 20.0
+            width = (Double(frameWidth) - (space * (Double(column) + 1.0)))/Double(column)
+        }
+        return (space, width)
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.bounds, style: .plain)
         tableView.dataSource = self
@@ -27,11 +50,19 @@ class TemplateView: UIView {
         return tableView
     }()
     
-    init(frame: CGRect, titles:[String]) {
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.frame = self.bounds
+        return scrollView
+    }()
+    
+    init(frame: CGRect, titles:[String], column:Int = 1) {
         super.init(frame: frame)
         self.titles = titles
-        self.addSubview(tableView)
-//        doViewUI()
+        self.columnn = column
+        self.addSubview(scrollView)
+//        self.addSubview(tableView)
+        doViewUI()
     }
     
     required init?(coder: NSCoder) {
@@ -42,29 +73,56 @@ class TemplateView: UIView {
         self.backgroundColor = .rgbSame(rgb: 240)
         guard let titles = titles else { return }
         var oldBtn = UIButton()
-        let btnHeight = 40.0
-        let btnTop = 50.0
         for (index,name) in titles.enumerated() {
             let button = UIButton(type: .system)
             button.setTitle(name, for: .normal)
             button.setTitleColor(.randomTupleColor().fgColor, for: .normal)
             button.backgroundColor = .randomTupleColor().bgColor
             button.addTarget(self, action: #selector(pressedButton(sender:)), for: .touchUpInside)
-            self.addSubview(button)
+            scrollView.addSubview(button)
+            
+            let btnRow = Double(index / column)
+            let btnColumn = Double(index % column)
+            let btnX = buttonSpace.space + (buttonSpace.space + buttonSpace.width) * btnColumn
+            let btnY = verSpace + (verSpace + oneHeight) * btnRow
+            
             button.snp.makeConstraints { make in
-                if index == 0 {
-                    make.top.equalTo(btnTop)
-                } else {
-                    make.top.equalTo(oldBtn.snp.bottom).offset(btnTop)
-                }
-                make.height.equalTo(btnHeight)
-                make.width.equalToSuperview().multipliedBy(0.5)
-                make.centerX.equalToSuperview()
+//                if index == 0 {
+//                    make.top.equalTo(verSpace)
+//                } else {
+//                    make.top.equalTo(oldBtn.snp.bottom).offset(verSpace)
+//                }
+//                make.top.equalToSuperview().offset(btnX)
+//                make.width.equalToSuperview().multipliedBy(0.5)
+//                make.centerX.equalToSuperview()
+                make.top.equalToSuperview().offset(btnY)
+                make.left.equalTo(btnX)
+                make.height.equalTo(oneHeight)
+                make.width.equalTo(buttonSpace.width)
             }
-            button.layer.cornerRadius = btnHeight / 2
+            button.layer.cornerRadius = oneHeight / 2
             oldBtn = button
         }
+        
+        
+        scrollView.contentSize = CGSize(width: 0.0, height: doScrollViewHeight())
+        
     }
+    private func doButtonWidth() {
+        
+    }
+    //计算scrollView的高度
+    private func doScrollViewHeight() -> Double {
+        
+        guard let btnNum = titles?.count else { return 0.0 }
+        let unitHeight = verSpace + oneHeight
+        var row = btnNum / column
+        if btnNum % column != 0 {
+            row += 1
+        }
+        return Double(row) * unitHeight
+    }
+    
     @objc func pressedButton(sender: UIButton) {
         var index = -1
         if let btnTitle = sender.currentTitle {
@@ -101,12 +159,11 @@ extension TemplateView: UITableViewDataSource,UITableViewDelegate {
 
 class TemplateCell: UITableViewCell {
    
-    lazy var showLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .randomTupleColor().bgColor
-        label.textColor = .randomTupleColor().fgColor
-        label.textAlignment = .center
-        return label
+    lazy var showLabel: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .randomTupleColor().bgColor
+        button.setTitleColor(UIColor.randomTupleColor().fgColor, for: .normal)
+        return button
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -125,6 +182,7 @@ class TemplateCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     public func echoContent(title: String) {
-        showLabel.text = title
+//        showLabel.text = title
+        showLabel.setTitle(title, for: .normal)
     }
 }

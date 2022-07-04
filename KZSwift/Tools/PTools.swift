@@ -6,6 +6,7 @@
 //  该项目中用到的工具类，有一定特殊性
 
 import Foundation
+import CryptoSwift
 
 class PTools {
     
@@ -64,6 +65,19 @@ extension String {
             string += ch
         }
         return string
+    }
+    
+    //string + AES加密 => base64
+    func aesEncode() -> String? {
+        let AESKey = "6dd3e6ed9053adfa8c4744b0f65a419f"
+        guard let aes = try? AES(key: Array(AESKey.utf8), blockMode: ECB(), padding: .pkcs5) else {
+            return nil
+        }
+        guard let encrypted = try? aes.encrypt(self.bytes) else {
+            return nil
+        }
+        let encryptedBase64 = encrypted.toBase64()
+        return encryptedBase64
     }
     
 }

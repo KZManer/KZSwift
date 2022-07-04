@@ -47,7 +47,7 @@ class ActiveVC: RootHomeVC {
     //button4 action
     func button4Action() {
         let idfa = "KZZB1SOD-JFJE-5UIK-OX29-58QFG4Y33QO1"
-        guard let idfaAES = OceanEngineHandler.shared.data_encode(original: idfa) else {
+        guard let idfaAES = idfa.aesEncode() else {
             KLog(message: "idfa加密失败")
             return }
         
