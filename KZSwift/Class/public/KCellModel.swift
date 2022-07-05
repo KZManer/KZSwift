@@ -12,7 +12,7 @@ class KCellModel: NSObject {
     enum ModelId {
         case navigationBar,loadingAnimation,placeholder,wkwebview,methodSwizzling,shape,date,systemFont
         case DZNEmptyDataSet,KeychainAccess,Alamofire,SwiftyJSON,JXSegmentedView,SPPageMenu
-        case active,lock
+        case active,lock,circle
         case direction,cycle,timer,java
     }
     
@@ -63,6 +63,7 @@ class KCellModel: NSObject {
         let arr:[KCellModel] = [
             .init("激活逻辑", .active, ActiveVC.self),
             .init("Lock", .lock, LockVC.self),
+            .init("可转圈的圆", .circle, CircleVC.self)
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }

@@ -1,41 +1,37 @@
 //
-//  CircularSlider.swift
+//  CircleSlider1.swift
 //  KZSwift
 //
-//  Created by J+ on 2022/6/17.
+//  Created by J+ on 2022/7/4.
 //
 
 import UIKit
 
-class CircularSlider: UIControl {
+class CircleSlider1: UIControl {
 
     public var value : CGFloat  = 0 {
         didSet {
-            KLog(message: value)
             self.setNeedsDisplay()
             self.sendActions(for: .valueChanged)
         }
     }
     public  var minimumValue : CGFloat  = 0.0
-    public  var maximumValue : CGFloat  = 1.0
+    public  var maximumValue : CGFloat  = 360.0
     public  var filledColor  : UIColor = .orange
     public  var unfilledColor: UIColor = .lightGray
     private var radius       : CGFloat = 0.0
     private var centerPoint  : CGPoint = .zero
-
-    lazy var circleView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .blue
-        let value = 30.0
-        imageView.frame = CGRect(x: self.frame.size.width/2.0-value/2.0, y: 0, width: value, height: value)
-        return imageView
-    }()
+    private var indicatorRadius = 10.0 //可拖动圆 半径
+    private var circleLineWidth = 40.0  //圆 线宽
+    private var circleRadius : CGFloat {//圆 半径
+        let frameWidth = self.frame.size.width
+        let value = frameWidth / 2.0 - indicatorRadius * 2
+        return value
+    }
     
     //MARK: - Override Method
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.addSubview(circleView)
-//        circleView.layer.cornerRadius = 15
         doDefaults()
     }
     required init?(coder: NSCoder) {
@@ -58,13 +54,42 @@ class CircularSlider: UIControl {
     //MARK: - UI
     override func draw(_ rect: CGRect) {
         let diameter = radius * 2.0
-        let context1 = UIGraphicsGetCurrentContext()
 
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        //圆
+        context.addArc(center: centerPoint, radius: circleRadius, startAngle: 0, endAngle: Double.pi * 2.0, clockwise: true)
+        UIColor.gray.setStroke()
+        context.setLineWidth(circleLineWidth)
+        context.setLineCap(.butt)
+        context.drawPath(using: .stroke)
+        
+        //进度
+        let endAngle = self.value / valueRange() * Double.pi * 2.0
+        context.addArc(center: centerPoint, radius: circleRadius, startAngle: 0, endAngle: endAngle, clockwise: false)
+        UIColor.red.setStroke()
+        context.setLineWidth(circleLineWidth)
+        context.setLineCap(.round)
+        context.drawPath(using: .stroke)
+        
+        
+        //可拖动圆
+        var resultP = CGPoint.zero
+        resultP.y = round(centerPoint.y + circleRadius * sin(endAngle))
+        resultP.x = round(centerPoint.x + circleRadius * cos(endAngle))
+        context.setShadow(offset: CGSize.zero, blur: 3, color: UIColor.blue.cgColor)
+//        context.addRect(CGRect(x: resultP.x, y: resultP.y, width: indicatorRadius, height: indicatorRadius))
+        UIColor.blue.setStroke()
+        context.setLineWidth(indicatorRadius * 2)
+        context.addEllipse(in: CGRect(x: resultP.x, y: resultP.y, width: indicatorRadius * 2, height: indicatorRadius * 2))
+//        context.addLines(between: [centerPoint,resultP])
+        context.drawPath(using: .stroke)
+        
+        return
         //unfilled part - 外圆
         unfilledColor.setFill()
         let contourRect = CGRect(x: centerPoint.x - radius, y: centerPoint.y - radius, width: diameter, height: diameter)
         
-        guard let context = context1 else { return }
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         context.fillEllipse(in: contourRect)
         context.fillPath()
         
@@ -88,14 +113,14 @@ class CircularSlider: UIControl {
         context.fillEllipse(in: innerCircleRect)
         context.fillPath()
         
-        KLog(message: degrees)
+//        KLog(message: degrees)
         
         //绘制拖动小圆块
         var result = CGPoint.zero
         result.x = centerPoint.x + (radius-space/2.0) * cos(degrees / 180.0 * Double.pi - Double.pi/2)
         result.y = centerPoint.y + (radius-space/2.0) * sin(degrees / 180.0 * Double.pi - Double.pi/2)
-        KLog(message: result.x)
-        KLog(message: result.y)
+//        KLog(message: result.x)
+//        KLog(message: result.y)
         
         UIColor.red.setStroke()
         context.setLineWidth(15)
@@ -108,41 +133,32 @@ class CircularSlider: UIControl {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         //!!!: Warning
-        //UITouch *touch = [touches anyObject];
         let touch = touches.first
-
-        if let value = touch?.location(in: self.circleView) {
-//            KLog(message: "\(value.x) - \(value.y)")
-            let a = self.circleView.layer.contains(value)
-//            KLog(message: a)
+        
+        if let point = touch?.location(in: self) {
+            let a = valueForPoint(point: point)
+            let b = angleForPoint(endPoint: point)
+            KLog(message: a)
+            KLog(message: b)
         }
-//        if let point = touch?.location(in: self.circleView),
-//           let movePoint = touch?.location(in: self),
-//           self.circleView.layer.contains(point) {
-//            sendActions(for: .touchDown)
-//            value = valueForPoint(point: movePoint)
-//        }
         
         if let point = touch?.location(in: self),
-           containsPoint(point: point) {
+           containsPoint(point: point),
+           inPathway(point: point)
+        {
             sendActions(for: .touchDown)
-            value = valueForPoint(point: point)
+//            value = valueForPoint(point: point)
+            value = angleForPoint(endPoint: point)
         }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         let touch = touches.first
         
-//        if let point = touch?.location(in: self.circleView) {
-//            if self.circleView.layer.contains(point) {
-//                sendActions(for: .touchUpInside)
-//            } else {
-//                sendActions(for: .touchUpOutside)
-//            }
-//        }
-        
         if let point = touch?.location(in: self) {
-            if containsPoint(point: point) {
+            if containsPoint(point: point),
+               inPathway(point: point)
+            {
                 sendActions(for: .touchUpInside)
             } else {
                 sendActions(for: .touchUpOutside)
@@ -157,15 +173,37 @@ class CircularSlider: UIControl {
         super.touchesMoved(touches, with: event)
         let touch = touches.first
         
-//        if let point = touch?.location(in: self.circleView),
-//           let movePoint = touch?.location(in: self),
-//           self.circleView.layer.contains(point) {
-//            value = valueForPoint(point: movePoint)
-//        }
-        
-        if let point = touch?.location(in: self) {
-            value = valueForPoint(point: point)
+        if let point = touch?.location(in: self)
+//           inPathway(point: point)
+        {
+//            value = valueForPoint(point: point)
+            value = angleForPoint(endPoint: point)
         }
+    }
+    
+    private func inPathway(point: CGPoint) -> Bool {
+        
+        let lineWidth = 8.0
+        let radiusTemp = radius - lineWidth * 2.0 - lineWidth / 2.0
+        
+        let x = point.x - centerPoint.x
+        let y = point.y - centerPoint.y
+        
+        let result = sqrt(x*x + y*y)
+        
+        KLog(message: result)
+//        KLog(message: radius)
+//        KLog(message: radiusTemp)
+        
+        var value = true
+        if result < radiusTemp {
+            value = false
+        }
+        if result > radius {
+            value = false
+        }
+        KLog(message: value)
+        return value
     }
     
     //MARK: - Helpers
@@ -189,6 +227,17 @@ class CircularSlider: UIControl {
             degrees = 360.0 + degrees
         }
         return degrees / 360.0 * valueRange()
+    }
+    func angleForPoint(endPoint: CGPoint) -> CGFloat {
+        var v = CGPoint(x: endPoint.x - centerPoint.x, y: endPoint.y - centerPoint.y)
+        let vmag = sqrt(v.x * v.x + v.y * v.y)
+        var result = 0.0
+        v.x = v.x/vmag
+        v.y = v.y/vmag
+        let radians = atan2(v.y, v.x)
+        result = 180.8 * radians / Double.pi
+        let value = result >= 0 ? result : result + 360.0
+        return value
     }
     
     //MARK: - Setters

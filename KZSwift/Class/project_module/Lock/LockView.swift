@@ -79,7 +79,7 @@ class LockView: UIView {
         slider.unfilledColor = .hex("#cbccd1")
         slider.minimumValue = 0
         slider.maximumValue = 120
-        slider.value = 10
+        slider.value = 15
         slider.addTarget(self, action: #selector(sliderValueDidChange(slider:)), for: .valueChanged)
         self.addSubview(slider)
         /**timeLabel**/

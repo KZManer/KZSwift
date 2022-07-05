@@ -1,0 +1,68 @@
+PODS:
+  - Alamofire (5.6.1)
+  - ByebyeUnicode (1.1.0)
+  - CryptoSwift (1.5.1)
+  - DZNEmptyDataSet (1.8.1)
+  - EmptyStateKit (1.1.0)
+  - JXSegmentedView (1.3.0)
+  - KeychainAccess (4.2.2)
+  - Kingfisher (7.2.1)
+  - KMNavigationBarTransition (1.1.10)
+  - SnapKit (5.6.0)
+  - SPPageMenu (3.5.0)
+  - SwiftyJSON (4.3.0)
+  - SwiftyUserDefaults (5.3.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - ByebyeUnicode
+  - CryptoSwift (~> 1.5.1)
+  - DZNEmptyDataSet
+  - EmptyStateKit
+  - JXSegmentedView
+  - KeychainAccess (~> 4.2.2)
+  - Kingfisher (~> 7.0)
+  - KMNavigationBarTransition
+  - SnapKit (~> 5.0)
+  - SPPageMenu (= 3.5.0)
+  - SwiftyJSON (~> 4.0)
+  - SwiftyUserDefaults (~> 5.0)
+  - Toast-Swift (~> 5.0.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ByebyeUnicode
+    - CryptoSwift
+    - DZNEmptyDataSet
+    - EmptyStateKit
+    - JXSegmentedView
+    - KeychainAccess
+    - Kingfisher
+    - KMNavigationBarTransition
+    - SnapKit
+    - SPPageMenu
+    - SwiftyJSON
+    - SwiftyUserDefaults
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  ByebyeUnicode: 517bc2fc166129f2de7acdd31704b97f83eed5e9
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EmptyStateKit: dc41e9ce5c6089f67a49d063bce73ade9f2ba73f
+  JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
+  KMNavigationBarTransition: ceea7a78462b6d9910cf6dba93465a7e9168a1b7
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SPPageMenu: da182aafcec55719d5c326103cc7716c1e48f311
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 96de0139384afcfaf8e0791e3623d1d731dab649
+
+COCOAPODS: 1.11.3

@@ -39,6 +39,6 @@ class TabBarVC: UITabBarController {
             i+=1
         }
         self.viewControllers = controllers
-        self.selectedIndex = 0
+        self.selectedIndex = 2
     }
 }
