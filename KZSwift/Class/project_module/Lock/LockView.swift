@@ -74,11 +74,11 @@ class LockView: UIView {
         let sliderX = (self.frame.size.width - sliderWidth) / 2
         let sliderY = (self.frame.self.height - sliderWidth) / 2
         let sliderFrame = CGRect(x: sliderX, y: sliderY, width: sliderWidth, height: sliderWidth)
-        let slider = CircularSlider(frame: sliderFrame)
+        let slider = CircleSlider(frame: sliderFrame)
         slider.filledColor = .hex("#1296db")
         slider.unfilledColor = .hex("#cbccd1")
         slider.minimumValue = 0
-        slider.maximumValue = 120
+        slider.maximumValue = 360
         slider.value = 15
         slider.addTarget(self, action: #selector(sliderValueDidChange(slider:)), for: .valueChanged)
         self.addSubview(slider)
@@ -113,7 +113,7 @@ class LockView: UIView {
     @objc func pressedMenuBtn() {
         self.delegate?.dg_pressedMenuBtn()
     }
-    @objc func sliderValueDidChange(slider: CircularSlider) {
+    @objc func sliderValueDidChange(slider: CircleSlider) {
         timeLabel.text = String(format: "%.0f分钟", slider.value)
     }
     @objc func pressedBeginBtn() {

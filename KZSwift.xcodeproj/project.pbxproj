@@ -28,7 +28,7 @@
 		097AD597285AC7E000B0A5EB /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097AD596285AC7E000B0A5EB /* LockView.swift */; };
 		0986B8852872C44100295DA8 /* CircleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986B8842872C44100295DA8 /* CircleVC.swift */; };
 		0986B8892872C4C400295DA8 /* JXCircleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0986B8882872C4C400295DA8 /* JXCircleSlider.m */; };
-		0986B88B2872D88A00295DA8 /* CircleSlider1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986B88A2872D88900295DA8 /* CircleSlider1.swift */; };
+		0986B88B2872D88A00295DA8 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986B88A2872D88900295DA8 /* CircleSlider.swift */; };
 		098C4A3E2859731100A79FA5 /* CycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A3D2859731100A79FA5 /* CycleVC.swift */; };
 		098C4A412859840300A79FA5 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A402859840300A79FA5 /* TimerVC.swift */; };
 		098C4A432859B10300A79FA5 /* KTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098C4A422859B10300A79FA5 /* KTimer.swift */; };
@@ -97,7 +97,7 @@
 		0986B8862872C4C300295DA8 /* KZSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KZSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		0986B8872872C4C400295DA8 /* JXCircleSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCircleSlider.h; sourceTree = "<group>"; };
 		0986B8882872C4C400295DA8 /* JXCircleSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCircleSlider.m; sourceTree = "<group>"; };
-		0986B88A2872D88900295DA8 /* CircleSlider1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSlider1.swift; sourceTree = "<group>"; };
+		0986B88A2872D88900295DA8 /* CircleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
 		098C4A3D2859731100A79FA5 /* CycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleVC.swift; sourceTree = "<group>"; };
 		098C4A402859840300A79FA5 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		098C4A422859B10300A79FA5 /* KTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTimer.swift; sourceTree = "<group>"; };
@@ -256,7 +256,6 @@
 			children = (
 				0986B8872872C4C400295DA8 /* JXCircleSlider.h */,
 				0986B8882872C4C400295DA8 /* JXCircleSlider.m */,
-				0986B88A2872D88900295DA8 /* CircleSlider1.swift */,
 				0986B8842872C44100295DA8 /* CircleVC.swift */,
 			);
 			path = circle;
@@ -283,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				090620F0286A91160086597F /* LockTools.swift */,
+				0986B88A2872D88900295DA8 /* CircleSlider.swift */,
 				0927A5E3285C042D00CE2AF6 /* CircularSlider.swift */,
 				097AD596285AC7E000B0A5EB /* LockView.swift */,
 				098C4A472859FD5100A79FA5 /* LockVC.swift */,
@@ -650,7 +650,7 @@
 				299355A7284F27F000303938 /* DeviceManager.swift in Sources */,
 				29037D4A283C6927001FB744 /* ShimmerVC.swift in Sources */,
 				294E1AE7284DB79D0038EBD3 /* ActiveVC.swift in Sources */,
-				0986B88B2872D88A00295DA8 /* CircleSlider1.swift in Sources */,
+				0986B88B2872D88A00295DA8 /* CircleSlider.swift in Sources */,
 				29EC6854283B4685004F2D39 /* DNavigationBarVC.swift in Sources */,
 				29EC685E283B6DE9004F2D39 /* RootNavController.swift in Sources */,
 				04361FB12796A25D0090F31A /* RecordHomeVC.swift in Sources */,

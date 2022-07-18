@@ -24,7 +24,7 @@ class CircleVC: RootHomeVC {
         slider.angle = 90
         self.view.addSubview(slider)
         
-        let slider1 = CircleSlider1(frame: CGRect(x: x, y: width + 50, width: width, height: width))
+        let slider1 = CircleSlider(frame: CGRect(x: x, y: width + 50, width: width, height: width))
         slider1.filledColor = .hex("#1296db")
         slider1.unfilledColor = .hex("#cbccd1")
         slider1.minimumValue = 0
