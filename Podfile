@@ -9,6 +9,7 @@ target 'KZSwift' do
 use_frameworks!
 
 pod 'Alamofire', '~> 5.4'       #网络请求框架
+pod 'BMPlayer', '~> 1.3.0'      #视频播放框架
 pod 'ByebyeUnicode'             #把Xcode控制台输出的Unicode码转化成中文字符
 pod 'CryptoSwift', '~>1.5.1'    #加密框架
 pod 'DZNEmptyDataSet'			      #空白数据集显示框架
@@ -26,5 +27,10 @@ pod 'SwiftyUserDefaults', '~> 5.0' #UserDefault封装
 pod 'Toast-Swift', '~> 5.0.1'   #提示框架
 #pod 'RangersAppLog', '~> 3.2.9'
 
+#JJPlayer使用
+pod 'Masonry', '~>1.1.0'        
+pod 'YYCategories', '~> 1.0.4'
+pod 'MJExtension', '~> 3.2.2'
+#end
 
 end

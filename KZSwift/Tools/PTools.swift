@@ -80,4 +80,19 @@ extension String {
         return encryptedBase64
     }
     
+    /**随机返回一个网络视频地址**/
+    static func randomNetworkVideoPath() -> String {
+        let videoPaths = [
+            "http://www.w3school.com.cn/example/html5/mov_bbb.mp4",
+            "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+            "https://media.w3.org/2010/05/sintel/trailer.mp4",
+            "http://mvvideo2.meitudata.com/576bc2fc91ef22121.mp4",
+            "http://mvvideo10.meitudata.com/5a92ee2fa975d9739_H264_3.mp4",
+            "http://mvvideo11.meitudata.com/5a44d13c362a23002_H264_11_5.mp4",
+            "http://mvvideo10.meitudata.com/572ff691113842657.mp4"
+        ]
+        let randomIndex = Int(arc4random_uniform(UInt32(videoPaths.count)))
+        return videoPaths[randomIndex]
+    }
+    
 }
