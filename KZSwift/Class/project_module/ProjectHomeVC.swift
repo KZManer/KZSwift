@@ -46,6 +46,7 @@ class ProjectHomeVC: RootHomeVC {
 //            KLog(message: value)
             angleForNorth(endPoint: item)
         }
+        test()
     }
     
     private func angleForNorth(endPoint: CGPoint) {
@@ -75,6 +76,10 @@ class ProjectHomeVC: RootHomeVC {
         titleIV.layer.cornerRadius = 10
         titleIV.clipsToBounds = true
         self.navigationItem.titleView = titleIV
+    }
+    
+    func test() {
+
     }
 }
 

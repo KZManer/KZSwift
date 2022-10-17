@@ -11,9 +11,9 @@ class KCellModel: NSObject {
     
     enum ModelId {
         case navigationBar,loadingAnimation,placeholder,wkwebview,methodSwizzling,shape,date,systemFont
-        case DZNEmptyDataSet,KeychainAccess,Alamofire,SwiftyJSON,JXSegmentedView,SPPageMenu
-        case active,lock,circle,videoPlayer
-        case direction,cycle,timer,java
+        case DZNEmptyDataSet,KeychainAccess,Alamofire,SwiftyJSON,JXSegmentedView,SPPageMenu,FMDB
+        case active,lock,circle,videoPlayer,yilanVideoCell
+        case direction,cycle,timer,java,optionDelegate
     }
     
     var kTitle: String!
@@ -55,6 +55,7 @@ class KCellModel: NSObject {
             .init("3rd-SwiftyJSON", .SwiftyJSON, SwiftyJSONVC.self),
             .init("3rd-JXSegmentedView", .JXSegmentedView, JXSegmentedVC.self),
             .init("3rd-SPPageMenu", .SPPageMenu, SPPageMenuVC.self),
+            .init("3rd-FMDB", .FMDB, FMDBVC.self),
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }
@@ -64,7 +65,8 @@ class KCellModel: NSObject {
             .init("激活逻辑", .active, ActiveVC.self),
             .init("Lock", .lock, LockVC.self),
             .init("可转圈的圆", .circle, CircleVC.self),
-            .init("视频播放", .videoPlayer, VideoPlayerVC.self)
+            .init("视频播放", .videoPlayer, VideoPlayerVC.self),
+            .init("一览视频cell", .yilanVideoCell, YilanVideoVC.self)
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }
@@ -75,7 +77,8 @@ class KCellModel: NSObject {
             .init("手机方向", .direction, DirectionVC.self),
             .init("循环引用问题", .cycle, CycleVC.self),
             .init("定时器", .timer, TimerVC.self),
-            .init("Java联动", .java, JavaVC.self)
+            .init("Java联动", .java, JavaVC.self),
+            .init("Swift可选代理", .optionDelegate, OptionDelegateVC.self)
         ]
         return arr.sorted(){$0.kTitle < $1.kTitle}
     }

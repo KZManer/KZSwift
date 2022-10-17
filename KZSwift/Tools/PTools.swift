@@ -9,7 +9,34 @@ import Foundation
 import CryptoSwift
 
 class PTools {
-    
+    //毫秒转换为00:00格式
+    static public func convertMillisecondToMinute(ms: Int?) -> String? {
+        guard let millisecond = ms else { return nil }
+        let second = millisecond / 1000
+        var minutePosition = String(second / 60)
+        var secondPosition = String(second % 60)
+        if minutePosition.count == 1 {
+            minutePosition = "0" + minutePosition
+        }
+        if secondPosition.count == 1 {
+            secondPosition = "0" + secondPosition
+        }
+        return minutePosition + ":" + secondPosition
+    }
+    //播放次数转化，小于10000展示实际数据。大于10000以万为单位展示，保留小数点后一位，向下取整
+    static public func convertPlayCountFormat(number: Int?) -> String? {
+        guard let numInt = number, numInt > 0 else { return nil }
+        let divisionNum = 10000
+        if numInt < divisionNum {
+            return "\(numInt)"
+        }
+        let integetPart  = numInt / divisionNum
+        var decimalsPart = numInt % divisionNum
+        if decimalsPart > 0 {
+            decimalsPart = decimalsPart / 1000
+        }
+        return "\(integetPart).\(decimalsPart)万"
+    }
 }
 extension String {
     /**模拟idfa位数，随机生成一个 36位*/
@@ -94,5 +121,4 @@ extension String {
         let randomIndex = Int(arc4random_uniform(UInt32(videoPaths.count)))
         return videoPaths[randomIndex]
     }
-    
 }

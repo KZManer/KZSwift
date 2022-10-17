@@ -156,6 +156,17 @@ extension String {
     }
 }
 
+extension URL {
+    //快速实现获取url中的参数，直接返回字典
+    public var parametersFromQueryString: [String: String]? {
+        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
+        let queryItems = components.queryItems else { return nil }
+        return queryItems.reduce(into: [String: String]()) { (result, item) in
+            result[item.name] = item.value
+        }
+    }
+}
+
 //MARK: 时间扩展
 extension Date {
     /// 获取当前 秒级 时间戳 - 10位

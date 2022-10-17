@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreTelephony
 
 class ThirdLibVC: RootHomeVC {
     var infos: [KCellModel] {
@@ -21,6 +22,26 @@ class ThirdLibVC: RootHomeVC {
         let mainView = MainView(frame: minViewFrame, source: titles)
         mainView.delegate = self
         self.view.addSubview(mainView)
+        
+        
+        let info = CTTelephonyNetworkInfo()
+        if let dic = info.serviceSubscriberCellularProviders,
+           let key = dic.keys.first,
+           let carrier = dic[key] {
+            //运营商是否可用
+            let use = carrier.allowsVOIP
+            //运营商名称 ex:中国移动
+            let name = carrier.carrierName
+            //ISO国家代码 ex:cn
+            let code = carrier.isoCountryCode
+            //移动国家代码 ex:460
+            let mcc = carrier.mobileCountryCode
+            //移动网络代码 ex:02
+            let mnc = carrier.mobileNetworkCode
+            KLog(message: "\(use) - \(name) - \(code) - \(mcc) - \(mnc)")
+        }
+        
+        
     }
     
     //MARK: Custom Method

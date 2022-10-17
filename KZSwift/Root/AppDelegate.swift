@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: - System Method
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        KLog(message: NSHomeDirectory())
+        
+        let str = "600:130"
+        let arr = str.components(separatedBy: ":")
+        for item in arr {
+            KLog(message: item)
+        }
+        KLog(message: str.isEmpty)
         
 #if DEBUG
         injection()
@@ -43,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     KLog(message: "广告标识：用户没有选择 - \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
                 case .restricted:
                     KLog(message: "广告标识：用户受限制IDFA - \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
+                @unknown default: break
                 }
             }
         } else {

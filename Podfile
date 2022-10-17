@@ -14,12 +14,14 @@ pod 'ByebyeUnicode'             #把Xcode控制台输出的Unicode码转化成�
 pod 'CryptoSwift', '~>1.5.1'    #加密框架
 pod 'DZNEmptyDataSet'			      #空白数据集显示框架
 pod 'EmptyStateKit'             #空白数据集显示框架
+pod 'FMDB'
 #pod 'FWPopupView'               #弹窗
 pod 'JXSegmentedView'           #分页-Swift
 pod 'KeychainAccess', '~>4.2.2' #钥匙串
 pod 'Kingfisher', '~> 7.0'      #图片框架
 pod 'KMNavigationBarTransition' #管理导航栏转场
 # pod 'MJRefresh', '~> 3.1.14.1'  #刷新框架
+pod 'SDWebImage'                #图片框架
 pod 'SnapKit', '~>5.0'          #自动布局框架
 pod 'SPPageMenu', '3.5.0'       #分页-OC
 pod 'SwiftyJSON', '~> 4.0'      #数据解析框架
